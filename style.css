@@ -3,23 +3,33 @@ body {
 }
 
 div#navbar {
-    background-color: aquamarine;
-    position: fixed;
-    top: 100px;
-    width: 48%;
-    margin-left: 26%;
-    text-align: center;
+    background-color: rgb(220, 220, 220);
+    margin-left: 2%;
+    margin-top: 9%;
     padding-top: 5px;
-    padding-bottom: 4px;
-    border-radius: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
 }
 
 #navbar a {
     background-color: aliceblue;
+
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: auto;
+
     border-radius: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-family: 'Trebuchet MS'; 
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: 'Trebuchet MS';
+    font-size: 16px;
 
 }
 
@@ -29,4 +39,19 @@ div#navbar {
     margin-right: auto;
     width: 50%;
     margin-top: 13%;
+}
+
+div.child {
+    height: fit-content;
+}
+div.parent {
+    display: flex;
+    height: 220px;
+    
+}
+
+hr {
+    margin: 2%;
+    border-color: black;
+    height: 200px;
 }
