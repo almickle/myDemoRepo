@@ -1,3 +1,32 @@
 body {
-    background: goldenrod;
+    background: white;
+}
+
+div#navbar {
+    background-color: aquamarine;
+    position: fixed;
+    top: 100px;
+    width: 48%;
+    margin-left: 26%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+}
+
+#navbar a {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Trebuchet MS'; 
+
+}
+
+#constructionimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 13%;
 }
