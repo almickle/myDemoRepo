@@ -2,17 +2,27 @@ body {
     background: white;
 }
 
+div#topcontainer {
+    display: flex;
+    height: fit-content;
+}
+
 div#navbar {
     background-color: rgb(220, 220, 220);
 
-    margin-right: 42%;
-    margin-top: 120px;
+    margin-left: 80px;
+    margin-top: 140px;
 
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 6px;
+
+    text-align: center;
+
+    width:fit-content;
+    height: 19px;
 }
 
 #navbar a {
@@ -35,26 +45,9 @@ div#navbar {
 
 }
 
-#constructionimg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-top: 13%;
-}
-
-div.child {
-    height: fit-content;
-}
-div.parent {
-    display: flex;
+img#octocat {
+    width: 200px;
     height: 200px;
-    
-}
-
-#vertical {
-    margin: auto;
-    margin-left: 1%;
-    border-color: black;
-    height: 200px;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
