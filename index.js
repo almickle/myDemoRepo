@@ -11,6 +11,7 @@ const navbar6 = document.getElementById("contact")
 const navbarmenu = document.createElement("div")
 
 let menuToggle = 0
+let currentMenu = 0
 
 function addEventListenerToElementByID (elementID, appendLocation, appendage, leftMargin) {
     toggleMenu(elementID, appendLocation, appendage, leftMargin);
@@ -19,20 +20,32 @@ function addEventListenerToElementByID (elementID, appendLocation, appendage, le
 function toggleMenu(elementID, appendLocation, appendage, leftMargin) {
     elementID.addEventListener("click", function (event) {
         if (event = PointerEvent) {
-
-            if (menuToggle === 0) {
-                navbarpopup(appendLocation, appendage, leftMargin);
-                menuToggle = 1
-                return menuToggle
+                navbarpopup(appendLocation, appendage, leftMargin)
+                
+                if (currentMenu === elementID) {
+                    if(menuToggle === 1){
+                        appendage.remove()
+                        menuToggle = 0
+                        console.log("removed")
+                        console.log(menuToggle)
+                    }
+                    else {
+                        currentMenu = elementID
+                        console.log(currentMenu)
+                        menuToggle = 1
+                        console.log(menuToggle)            
+                        }
+                }
+                else {
+                    currentMenu = elementID
+                    console.log(currentMenu)
+                    menuToggle = 1
+                    console.log(menuToggle)            
+                    }
+                 
             } 
-
-            else {
-                appendage.remove()
-                menuToggle = 0
-                return menuToggle
-            }
         }
-    })
+    )
 }
 
 function navbarpopup(appendLocation, appendage, leftMargin) {
@@ -48,7 +61,7 @@ function navbarpopup(appendLocation, appendage, leftMargin) {
     appendage.style.borderRadius = "6px"
 
     appendage.style.marginLeft = leftMargin
-    appendage.style.marginTop = "1%"
+    appendage.style.marginTop = "1.5%"
 }
 
 addEventListenerToElementByID(navbar1, navbar, navbarmenu, "1%");
