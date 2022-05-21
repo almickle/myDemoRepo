@@ -5,7 +5,7 @@ const navbarMenu = document.createElement("div")
 
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
 const portfolioMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
-const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const personalMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const experienceMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const contactMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
@@ -26,7 +26,6 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
 let menuToggle = 0
-let k = 0
 let currentMenu
 
 function addEventListenerToElementByID (elementID, appendLocation, appendage, leftMargin, menu, content) {
@@ -86,7 +85,7 @@ function populateDropDownMenu(appendage, menu, content) {
     while(appendage.firstChild) {appendage.removeChild(appendage.firstChild)}
 
     for (let i = 0; i < menu.length; i++) {
-    console.log(menu[i])
+    console.log(menu.length)
 
     appendage.append(menu[i])
 
@@ -96,6 +95,7 @@ function populateDropDownMenu(appendage, menu, content) {
     menu[i].style.marginTop = "4px"
     menu[i].style.marginBottom = "4px"
     menu[i].style.fontFamily = "Trebuchet MS"
+    // maybe code // if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
     }
 }
 
