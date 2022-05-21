@@ -40,7 +40,10 @@ body div#navbar {
     padding-bottom: 3px;
 
     font-family: 'Trebuchet MS';
-    font-size: 100%;
+
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 
 }
 
