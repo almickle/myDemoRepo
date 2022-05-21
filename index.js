@@ -26,7 +26,6 @@ function toggleMenu(elementID, appendLocation, appendage, leftMargin) {
                     if(menuToggle === 1){
                         appendage.remove()
                         menuToggle = 0
-                        console.log("removed")
                         console.log(menuToggle)
                     }
                     else {
@@ -64,12 +63,12 @@ function navbarpopup(appendLocation, appendage, leftMargin) {
     appendage.style.marginTop = "1.5%"
 }
 
-addEventListenerToElementByID(navbar1, navbar, navbarmenu, "1%");
-addEventListenerToElementByID(navbar2, navbar, navbarmenu, "14.5%");
-addEventListenerToElementByID(navbar3, navbar, navbarmenu, "31.7%");
-addEventListenerToElementByID(navbar4, navbar, navbarmenu, "48.5%");
-addEventListenerToElementByID(navbar5, navbar, navbarmenu, "65.3%");
-addEventListenerToElementByID(navbar6, navbar, navbarmenu, "85.6%");
+addEventListenerToElementByID(navbar1, navbar, navbarmenu, "30px");
+addEventListenerToElementByID(navbar2, navbar, navbarmenu, "120px");
+addEventListenerToElementByID(navbar3, navbar, navbarmenu, "230px");
+addEventListenerToElementByID(navbar4, navbar, navbarmenu, "336px");
+addEventListenerToElementByID(navbar5, navbar, navbarmenu, "445px");
+addEventListenerToElementByID(navbar6, navbar, navbarmenu, "571px");
 
 //navbarpopup(navbar, navbar1menu);
 
