@@ -60,7 +60,7 @@ function navbarpopup(appendLocation, appendage, leftMargin) {
     appendage.style.borderRadius = "6px"
 
     appendage.style.marginLeft = leftMargin
-    appendage.style.marginTop = "1.5%"
+    appendage.style.marginTop = "18px"
 }
 
 addEventListenerToElementByID(navbar1, navbar, navbarmenu, "30px");
