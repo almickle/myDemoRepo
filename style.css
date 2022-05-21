@@ -2,52 +2,73 @@ body {
     background: white;
 }
 
-div#topcontainer {
-    display: flex;
-    height: fit-content;
-}
 
-div#navbar {
+body div#navbar {
     background-color: rgb(220, 220, 220);
 
-    margin-left: 80px;
-    margin-top: 140px;
+    float: left;
 
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 6px;
+    margin-top: 120px;
+    margin-left: 40px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 14px;
 
     text-align: center;
 
-    width:fit-content;
-    height: 19px;
+    width: 680px;
+    height: 20px;
+
 }
 
 #navbar a {
     background-color: aliceblue;
 
-    margin-left: 6px;
-    margin-right: 6px;
-    margin-top: auto;
+    margin-right: 12px;
+    margin-left: 12px;
 
-    border-radius: 5px;
+    border-radius: 7px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 2px;
+    padding-bottom: 3px;
 
     font-family: 'Trebuchet MS';
-    font-size: 16px;
+    font-size: 100%;
+
+}
+
+#navbar a:hover {
+    color: cornflowerblue;
 
 }
 
 img#octocat {
+    float: left;
     width: 200px;
     height: 200px;
     margin-top: 0%;
     margin-bottom: 0%;
 }
+
+#content img {
+    position: relative;
+
+    margin-top: 50px;
+    margin-left: 82px;
+    width: 600px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+
+    z-index: -1;
+}
+
+
