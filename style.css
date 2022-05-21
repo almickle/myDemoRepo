@@ -78,3 +78,9 @@ img#octocat {
 
     z-index: -1;
 }
+
+model-viewer {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+}
