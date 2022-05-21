@@ -44,6 +44,7 @@ body div#navbar {
     cursor: default;
     -moz-user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 
 }
 
@@ -63,7 +64,7 @@ img#octocat {
 #content img {
     position: relative;
 
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 82px;
     width: 600px;
 
