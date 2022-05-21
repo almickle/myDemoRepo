@@ -1,26 +1,42 @@
 const navbar = document.getElementById("navbar")
 const topcontainer = document.getElementById("topcontainer")
 
-const navbar1 = document.getElementById("home")
-const navbar2 = document.getElementById("portfolio")
-const navbar3 = document.getElementById("projects")
-const navbar4 = document.getElementById("personal")
-const navbar5 = document.getElementById("experience")
-const navbar6 = document.getElementById("contact")
+const navbarMenu = document.createElement("div")
 
-const navbarmenu = document.createElement("div")
+const homeMenuTab = [document.createElement("p"), document.createElement("p")]
+const portfolioMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const personalMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const experienceMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const contactMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
+
+const menuTab = [homeMenuTab, portfolioMenuTab, projectsMenuTab, personalMenuTab, experienceMenuTab, contactMenuTab]
+
+const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
+
+const iconLeft = ["30px", "120px", "230px", "336px", "445px", "571px"]
+
+const homeMenuContent = ["GitHub", "About"]
+const portfolioMenuContent = ["Renders", "Schematics", "Presentations"]
+const projectsMenuContent = ["Protoplasts", "Terrarium", "Game"]
+const personalMenuContent = ["General", "Education", "Interests"]
+const experienceMenuContent = ["Blender", "Photoshop", "Unreal Engine", "Maya", "Fusion 360"]
+const contactMenuContent = ["Email", "Phone", "Twitter"]
+
+const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
 let menuToggle = 0
-let currentMenu = 0
+let k = 0
+let currentMenu
 
-function addEventListenerToElementByID (elementID, appendLocation, appendage, leftMargin) {
-    toggleMenu(elementID, appendLocation, appendage, leftMargin);
+function addEventListenerToElementByID (elementID, appendLocation, appendage, leftMargin, menu, content) {
+    toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content);
     }
 
-function toggleMenu(elementID, appendLocation, appendage, leftMargin) {
+function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content) {
     elementID.addEventListener("click", function (event) {
         if (event = PointerEvent) {
-                navbarpopup(appendLocation, appendage, leftMargin)
+                navbarpopup(appendLocation, appendage, leftMargin, menu, content)
                 
                 if (currentMenu === elementID) {
                     if(menuToggle === 1){
@@ -47,13 +63,13 @@ function toggleMenu(elementID, appendLocation, appendage, leftMargin) {
     )
 }
 
-function navbarpopup(appendLocation, appendage, leftMargin) {
+function navbarpopup(appendLocation, appendage, leftMargin, menu, content) {
     appendLocation.append(appendage);
 
     appendage.style.backgroundColor = "aliceblue"
 
-    appendage.style.width = "200px"
-    appendage.style.height = "200px"
+    appendage.style.width = "fit-content"
+    appendage.style.height = "fit-content"
     appendage.style.borderStyle = "solid"
     appendage.style.borderWidth = "1px"
     appendage.style.borderColor = "black"
@@ -61,34 +77,28 @@ function navbarpopup(appendLocation, appendage, leftMargin) {
 
     appendage.style.marginLeft = leftMargin
     appendage.style.marginTop = "18px"
+    appendage.style.textAlign = "left"
+
+    populateDropDownMenu(appendage, menu, content)
 }
 
-addEventListenerToElementByID(navbar1, navbar, navbarmenu, "30px");
-addEventListenerToElementByID(navbar2, navbar, navbarmenu, "120px");
-addEventListenerToElementByID(navbar3, navbar, navbarmenu, "230px");
-addEventListenerToElementByID(navbar4, navbar, navbarmenu, "336px");
-addEventListenerToElementByID(navbar5, navbar, navbarmenu, "445px");
-addEventListenerToElementByID(navbar6, navbar, navbarmenu, "571px");
+function populateDropDownMenu(appendage, menu, content) {
+    while(appendage.firstChild) {appendage.removeChild(appendage.firstChild)}
 
-//navbarpopup(navbar, navbar1menu);
+    for (let i = 0; i < menu.length; i++) {
+    console.log(menu[i])
 
-//addEventListenerToElementByID(navbar2, callback1);
-//addEventListenerToElementByID(navbar3, callback1);
-//addEventListenerToElementByID(navbar4, callback1);
-//addEventListenerToElementByID(navbar5, callback1);
-//addEventListenerToElementByID(navbar6, callback1);
+    appendage.append(menu[i])
 
-//function navbarpopup() {
-    //navbar.append(navbar1menu);
-    //navbar1menu.style.backgroundColor = "aliceblue"
+    menu[i].textContent = content[i]
+    menu[i].style.paddingLeft = "10px"
+    menu[i].style.paddingRight = "10px"
+    menu[i].style.marginTop = "4px"
+    menu[i].style.marginBottom = "4px"
+    menu[i].style.fontFamily = "Trebuchet MS"
+    }
+}
 
-    //navbar1menu.style.width = "200px"
-    //navbar1menu.style.height = "200px"
-    //navbar1menu.style.borderStyle = "solid"
-    //navbar1menu.style.borderWidth = "1px"
-    //navbar1menu.style.borderColor = "black"
-    //navbar1menu.style.borderRadius = "6px"
-
-    //navbar1menu.style.marginLeft = "0%"
-    //navbar1menu.style.marginTop = "0%"
-//}
+for (n = 0; n <navbarIcon.length; n++) {
+addEventListenerToElementByID(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
+}
