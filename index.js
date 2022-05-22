@@ -1,5 +1,5 @@
 const navbar = document.getElementById("navbar")
-const topcontainer = document.getElementById("topcontainer")
+const protoplasts = document.getElementById("protoplasts")
 
 const navbarMenu = document.createElement("div")
 
@@ -25,20 +25,20 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
+const renderA = document.createElement("img")
+renderA.src = "Images/LoftView.PNG"
+
 let menuToggle = 0
 let currentMenu
 
-function addEventListenerToElementByID (elementID, appendLocation, appendage, leftMargin, menu, content) {
-    toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content);
-    }
 
 function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content) {
     elementID.addEventListener("click", function (event) {
         if (event = PointerEvent) {
                 navbarpopup(appendLocation, appendage, leftMargin, menu, content)
-                
+
                 if (currentMenu === elementID) {
-                    if(menuToggle === 1){
+                    if(menuToggle === 1) {
                         appendage.remove()
                         menuToggle = 0
                         console.log(menuToggle)
@@ -56,11 +56,10 @@ function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, cont
                     menuToggle = 1
                     console.log(menuToggle)            
                     }
-                 
-            } 
-        }
-    )
+        } 
+    })
 }
+
 
 function navbarpopup(appendLocation, appendage, leftMargin, menu, content) {
     appendLocation.append(appendage);
@@ -69,6 +68,7 @@ function navbarpopup(appendLocation, appendage, leftMargin, menu, content) {
 
     appendage.style.width = "fit-content"
     appendage.style.height = "fit-content"
+
     appendage.style.borderStyle = "solid"
     appendage.style.borderWidth = "1px"
     appendage.style.borderColor = "black"
@@ -85,8 +85,6 @@ function populateDropDownMenu(appendage, menu, content) {
     while(appendage.firstChild) {appendage.removeChild(appendage.firstChild)}
 
     for (let i = 0; i < menu.length; i++) {
-    console.log(menu.length)
-
     appendage.append(menu[i])
 
     menu[i].textContent = content[i]
@@ -95,10 +93,66 @@ function populateDropDownMenu(appendage, menu, content) {
     menu[i].style.marginTop = "4px"
     menu[i].style.marginBottom = "4px"
     menu[i].style.fontFamily = "Trebuchet MS"
+    menu[i].id = content[i]
+    menu[i].style.position = "relative"
+    menu[i].style.zIndex = "1"
+    
+    addDropDownEventListeners(appendage, menu, content, i)
+
     // maybe code // if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
+
     }
 }
 
-for (n = 0; n <navbarIcon.length; n++) {
-addEventListenerToElementByID(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
+function addDropDownEventListeners (appendage, menu, content, v) {
+    appendage.addEventListener("mouseover", function (event) {
+        if (event.target.id === content[v]) {
+            menu[v].style.color = "rgb(149, 183, 230)"
+            console.log(event.target.id)
+        } else {menu[v].style.color = "black"}
+    })
+
+    appendage.addEventListener("click", function (event) {
+        switch (event.target.id) {
+            case "GitHub": 
+                protoplasts.remove()
+            case "About":
+                protoplasts.remove()
+            case "Renders":
+                protoplasts.remove()
+                document.body.append(renderA)
+                renderA.style.width = "600px"
+                renderA.style.position = "relative"
+                renderA.style.zIndex = "-1"
+                renderA.style.marginTop = "70px"
+                renderA.style.marginLeft = "82px"
+                renderA.style.borderStyle = "solid"
+                renderA.style.borderWidth = "1px"
+                renderA.style.borderRadius = "20px"
+                renderA.style.userSelect = "none"
+
+            //position: relative;
+
+            //margin-top: 70px;
+            //margin-left: 82px;
+            //width: 600px;
+
+            //border-style: solid;
+            //border-width: 1px;
+            //border-radius: 20px;
+
+            //user-select: none;
+
+            //z-index: -1;
+
+            case "Models":
+                protoplasts.remove()
+            case "Protoplasts":
+                protoplasts.remove()
+        }
+    })
+}
+
+for (n = 0; n < navbarIcon.length; n++) {
+    toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
 }
