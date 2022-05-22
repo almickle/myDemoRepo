@@ -4,7 +4,7 @@ const topcontainer = document.getElementById("topcontainer")
 const navbarMenu = document.createElement("div")
 
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
-const portfolioMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
+const portfolioMenuTab = [document.createElement("p"), document.createElement("p")]
 const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const personalMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const experienceMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
@@ -17,7 +17,7 @@ const navbarIcon = [document.getElementById("home"), document.getElementById("po
 const iconLeft = ["30px", "120px", "230px", "336px", "445px", "571px"]
 
 const homeMenuContent = ["GitHub", "About"]
-const portfolioMenuContent = ["Renders", "Schematics", "Presentations"]
+const portfolioMenuContent = ["Renders", "Models"]
 const projectsMenuContent = ["Protoplasts", "Terrarium", "Game"]
 const personalMenuContent = ["General", "Education", "Interests"]
 const experienceMenuContent = ["Blender", "Photoshop", "Unreal Engine", "Maya", "Fusion 360"]
