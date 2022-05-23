@@ -25,12 +25,32 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
+
+
 const renderA = document.createElement("img")
 renderA.src = "Images/LoftView.PNG"
 
+const backArrow = document.createElement("img")
+backArrow.src = "Images/BackArrow.png"
+backArrow.style.width = "50px"
+backArrow.style.position = "absolute"
+backArrow.style.zIndex = "1"
+backArrow.style.float = "left"
+backArrow.style.marginTop = "200px"
+
+const forwardArrow = document.createElement("img")
+forwardArrow.src = "Images/BackArrow.png"
+forwardArrow.style.width = "50px"
+forwardArrow.style.position = "absolute"
+forwardArrow.style.zIndex = "1"
+forwardArrow.style.float = "right"
+forwardArrow.style.marginTop = "200px"
+forwardArrow.style.marginLeft = "25px"
+forwardArrow.style.transform = "rotate(180deg)"
+
+
 let menuToggle = 0
 let currentMenu
-
 
 function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content) {
     elementID.addEventListener("click", function (event) {
@@ -120,7 +140,14 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 protoplasts.remove()
             case "Renders":
                 protoplasts.remove()
+                appendage.remove()
+                menuToggle = 0
+
+                document.body.append(backArrow)
                 document.body.append(renderA)
+                document.body.append(forwardArrow)
+                
+
                 renderA.style.width = "600px"
                 renderA.style.position = "relative"
                 renderA.style.zIndex = "-1"
@@ -131,19 +158,6 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 renderA.style.borderRadius = "20px"
                 renderA.style.userSelect = "none"
 
-            //position: relative;
-
-            //margin-top: 70px;
-            //margin-left: 82px;
-            //width: 600px;
-
-            //border-style: solid;
-            //border-width: 1px;
-            //border-radius: 20px;
-
-            //user-select: none;
-
-            //z-index: -1;
 
             case "Models":
                 protoplasts.remove()
@@ -153,6 +167,21 @@ function addDropDownEventListeners (appendage, menu, content, v) {
     })
 }
 
+function fadeOut (delay) {
+    for (let i = 100; i >= 0; i--) {
+        setTimeout(setOpacity(i), delay)
+        console.log(`the opacity is ${renderA.style.opacity}`)
+    }
+}
+
+function setOpacity(c) {
+    renderA.style.opacity = c/100
+}
+    
+
+
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
 }
+
+// https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.careandshare-ut.org%2Fimage-coming-soon%2F&psig=AOvVaw1rpwuGIZaqR0N2EmF072s3&ust=1653346079702000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPjBkqGY9PcCFQAAAAAdAAAAABAD
