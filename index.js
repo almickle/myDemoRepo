@@ -74,6 +74,20 @@ const renderC = document.createElement("img")
 
 const renderSlides = [renderA, renderB, renderC]
 
+const DodecahedronModel = document.getElementById("Dodecahedron")
+const HexahedronModel = document.getElementById("Hexahedron")
+const IcosahedronModel = document.getElementById("Icosahedron")
+const OctahedronModel = document.getElementById("Octahedron")
+const TetrahedronModel = document.getElementById("Tetrahedron")
+
+        DodecahedronModel.remove()
+        HexahedronModel.remove()
+        IcosahedronModel.remove()
+        OctahedronModel.remove()
+        TetrahedronModel.remove()
+
+
+
 const backArrow = document.createElement("img")
     backArrow.src = "Images/BackArrow.png"
         backArrow.style.width = "50px"
@@ -97,7 +111,6 @@ let menuToggle = 0
 let currentMenu
 let currentSlideIndex = 0
 let nextSlideIndex
-let renderPageOpen = 0
 
 
 // function definitions //
@@ -194,14 +207,18 @@ function addDropDownClickListeners() {
         switch (event.target.id) {
             case "GitHub": 
                 protoplasts.remove()
+                navbarMenu.remove()
+                menuToggle = 0
+
             case "About":
-                protoplasts.remove()
-            case "Renders":
                 protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
-                renderPageOpen = 1
+            case "Renders":
+                protoplasts.remove()
+                navbarMenu.remove()
+                menuToggle = 0
 
                 contentContainer.append(backArrow)
                 contentContainer.append(renderSlides[currentSlideIndex])
@@ -209,8 +226,17 @@ function addDropDownClickListeners() {
 
             case "Models":
                 protoplasts.remove()
+                navbarMenu.remove()
+                menuToggle = 0
+
+                contentContainer.append(backArrow)
+                contentContainer.append(renderSlides[currentSlideIndex])
+                contentContainer.append(forwardArrow)
+
             case "Protoplasts":
                 protoplasts.remove()
+                navbarMenu.remove()
+                menuToggle = 0
         }
     })
 }
