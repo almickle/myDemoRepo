@@ -1,3 +1,5 @@
+//elements and styling //
+
 const navbar = document.getElementById("navbar")
 const protoplasts = document.getElementById("protoplasts")
 
@@ -25,14 +27,24 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
-const renderContainer = document.createElement("div")
-renderContainer.id = "rendercontainer"
+const contentContainer = document.createElement("div")
+    contentContainer.id = "contentcontainer"
 
 const renderA = document.createElement("img")
-renderA.src = "Images/LoftView.PNG"
+    renderA.src = "Images/LoftView.PNG"
+        renderA.style.width = "600px"
+        renderA.style.position = "relative"
+        renderA.style.zIndex = "-2"
+        renderA.style.marginTop = "70px"
+        renderA.style.marginLeft = "82px"
+        renderA.style.borderStyle = "solid"
+        renderA.style.borderWidth = "1px"
+        renderA.style.borderRadius = "20px"
+        renderA.style.userSelect = "none"
+        renderA.style.marginBottom = "100px"
 
 const renderB = document.createElement("img")
-renderB.src = "Images/ImageComingSoon.jpg"
+    renderB.src = "Images/ImageComingSoon.jpg"
         renderB.style.width = "600px"
         renderB.style.position = "relative"
         renderB.style.zIndex = "-2"
@@ -44,25 +56,49 @@ renderB.src = "Images/ImageComingSoon.jpg"
         renderB.style.userSelect = "none"
         renderB.style.marginBottom = "100px"
 
+const renderC = document.createElement("img")
+    renderC.src = "Images/ImageComingSoon.jpg"
+        renderC.style.width = "600px"
+        renderC.style.height = "400px"
+        renderC.style.position = "relative"
+        renderC.style.zIndex = "-2"
+        renderC.style.marginTop = "70px"
+        renderC.style.marginLeft = "82px"
+        renderC.style.borderStyle = "solid"
+        renderC.style.borderWidth = "1px"
+        renderC.style.borderRadius = "20px"
+        renderC.style.userSelect = "none"
+        renderC.style.marginBottom = "100px"
+
+const renderSlides = [renderA, renderB, renderC]
+
 const backArrow = document.createElement("img")
-backArrow.src = "Images/BackArrow.png"
-backArrow.style.width = "50px"
-backArrow.style.position = "absolute"
-backArrow.style.zIndex = "1"
-backArrow.style.marginTop = "200px"
+    backArrow.src = "Images/BackArrow.png"
+        backArrow.style.width = "50px"
+        backArrow.style.position = "absolute"
+        backArrow.style.zIndex = "1"
+        backArrow.style.marginTop = "200px"
 
 const forwardArrow = document.createElement("img")
-forwardArrow.src = "Images/BackArrow.png"
-forwardArrow.style.width = "50px"
-forwardArrow.style.position = "absolute"
-forwardArrow.style.zIndex = "1"
-forwardArrow.style.marginTop = "200px"
-forwardArrow.style.marginLeft = "25px"
-forwardArrow.style.transform = "rotate(180deg)"
+    forwardArrow.src = "Images/BackArrow.png"
+        forwardArrow.style.width = "50px"
+        forwardArrow.style.position = "absolute"
+        forwardArrow.style.zIndex = "1"
+        forwardArrow.style.marginTop = "200px"
+        forwardArrow.style.marginLeft = "25px"
+        forwardArrow.style.transform = "rotate(180deg)"
 
+
+// variables and initial values //
 
 let menuToggle = 0
 let currentMenu
+let currentSlideIndex = 0
+let nextSlideIndex
+let renderPageOpen = 0
+
+
+// function definitions //
 
 function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content) {
     elementID.addEventListener("click", function (event) {
@@ -73,20 +109,20 @@ function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, cont
                     if(menuToggle === 1) {
                         appendage.remove()
                         menuToggle = 0
-                        console.log(menuToggle)
+                        console.log(`menuToggle = ${menuToggle}`)
                     }
                     else {
                         currentMenu = elementID
-                        console.log(currentMenu)
+                        console.log(`currentMenu:${currentMenu.id}`)
                         menuToggle = 1
-                        console.log(menuToggle)            
+                        console.log(`menuToggle = ${menuToggle}`)            
                         }
                 }
                 else {
                     currentMenu = elementID
-                    console.log(currentMenu)
+                    console.log(`currentMenu:${currentMenu.id}`)
                     menuToggle = 1
-                    console.log(menuToggle)            
+                    console.log(`menuToggle = ${menuToggle}`)            
                     }
         } 
     })
@@ -128,23 +164,31 @@ function populateDropDownMenu(appendage, menu, content) {
     menu[i].id = content[i]
     menu[i].style.position = "relative"
     menu[i].style.zIndex = "1"
-    
-    addDropDownEventListeners(appendage, menu, content, i)
 
-    // maybe code // if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
+    // code for menu partitions: if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
 
     }
 }
 
-function addDropDownEventListeners (appendage, menu, content, v) {
-    appendage.addEventListener("mouseover", function (event) {
-        if (event.target.id === content[v]) {
-            menu[v].style.color = "rgb(149, 183, 230)"
-            console.log(event.target.id)
-        } else {menu[v].style.color = "black"}
+function addDropDownHoverListener () {
+    document.addEventListener("mouseover", function (event) {
+        for (let i = 0; i < menuContentList.length; i++){
+            for (let c = 0; c < menuContentList[i].length; c++){
+                if (event.target.id === menuContentList[i][c]) {
+                    console.log(`selected: ${menuContentList[i][c]}`)
+                    menuTab[i][c].style.color = "cornflowerblue"
+                } else {
+                    menuTab[i][c].style.color = "black"
+                }
+            }
+        }
     })
+}
 
-    appendage.addEventListener("click", function (event) {
+function addDropDownClickListeners() {
+    document.body.append(contentContainer)
+    navbarMenu.addEventListener("click", function (event) {
+
         switch (event.target.id) {
             case "GitHub": 
                 protoplasts.remove()
@@ -152,38 +196,14 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 protoplasts.remove()
             case "Renders":
                 protoplasts.remove()
-                appendage.remove()
+                navbarMenu.remove()
                 menuToggle = 0
 
-                document.body.append(renderContainer)
-                renderContainer.append(backArrow)
-                renderContainer.append(renderA)
-                renderContainer.append(forwardArrow)
-                
+                renderPageOpen = 1
 
-                renderA.style.width = "600px"
-                renderA.style.position = "relative"
-                renderA.style.zIndex = "-2"
-                renderA.style.marginTop = "70px"
-                renderA.style.marginLeft = "82px"
-                renderA.style.borderStyle = "solid"
-                renderA.style.borderWidth = "1px"
-                renderA.style.borderRadius = "20px"
-                renderA.style.userSelect = "none"
-                renderA.style.marginBottom = "100px"
-
-                let opacity = 100
-                let renderTimer = setInterval(function (){
-                    opacity--
-                    renderA.style.opacity = opacity/100
-                    console.log(renderA.style.opacity)
-
-                    if (opacity === 0) {
-                        clearInterval(renderTimer)
-                        renderA.replaceWith(renderB)
-                    }
-
-                }, 8)
+                contentContainer.append(backArrow)
+                contentContainer.append(renderSlides[currentSlideIndex])
+                contentContainer.append(forwardArrow)
 
             case "Models":
                 protoplasts.remove()
@@ -192,10 +212,70 @@ function addDropDownEventListeners (appendage, menu, content, v) {
         }
     })
 }
-    
+
+function minusSlideIndex () {
+    if (currentSlideIndex > 0) {
+        nextSlideIndex = currentSlideIndex - 1
+        slideShow()
+        currentSlideIndex--
+    } else {
+        nextSlideIndex = renderSlides.length - 1
+        slideShow()
+        currentSlideIndex = renderSlides.length - 1
+    }
+}
+
+function plusSlideIndex() {
+    if (currentSlideIndex < renderSlides.length - 1) {
+        nextSlideIndex = currentSlideIndex + 1
+        slideShow()
+        currentSlideIndex++
+    } else {
+        nextSlideIndex = 0
+        slideShow()
+        currentSlideIndex = 0
+    }
+}
+
+function slideShow () {
+    renderSlides[currentSlideIndex].replaceWith(renderSlides[nextSlideIndex])
+    console.log(`replaced slide:${currentSlideIndex + 1} with slide:${nextSlideIndex + 1}`)
+
+}
+
+function backClickListener() {
+    backArrow.addEventListener ("click", function (event) {
+        minusSlideIndex()
+    })
+}
+
+function forwardClickListener() {
+    forwardArrow.addEventListener ("click", function (event) {
+        plusSlideIndex()
+    })
+}
+
+function fadeOut (){
+    let opacity = 100
+    let renderTimer = setInterval(function (){
+            opacity--
+            renderA.style.opacity = opacity/100
+
+            if (opacity === 0) {
+                clearInterval(renderTimer)
+                renderA.replaceWith(renderB)
+            }
+
+    }, 8)
+}
+
+// function calls //
+
+addDropDownHoverListener()
+addDropDownClickListeners()
+backClickListener()
+forwardClickListener()
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
 }
-
-// https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.careandshare-ut.org%2Fimage-coming-soon%2F&psig=AOvVaw1rpwuGIZaqR0N2EmF072s3&ust=1653346079702000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPjBkqGY9PcCFQAAAAAdAAAAABAD
