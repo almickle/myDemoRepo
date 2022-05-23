@@ -4,7 +4,7 @@ const protoplasts = document.getElementById("protoplasts")
 const navbarMenu = document.createElement("div")
 
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
-const portfolioMenuTab = [document.createElement("p"), document.createElement("p")]
+const portfolioMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const personalMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const experienceMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p"), document.createElement("p")]
@@ -17,7 +17,7 @@ const navbarIcon = [document.getElementById("home"), document.getElementById("po
 const iconLeft = ["30px", "120px", "230px", "336px", "445px", "571px"]
 
 const homeMenuContent = ["GitHub", "About"]
-const portfolioMenuContent = ["Renders", "Models"]
+const portfolioMenuContent = ["Renders", "Models", "Animations"]
 const projectsMenuContent = ["Protoplasts", "Terrarium", "Game"]
 const personalMenuContent = ["General", "Education", "Interests"]
 const experienceMenuContent = ["Blender", "Photoshop", "Unreal Engine", "Maya", "Fusion 360"]
@@ -159,6 +159,15 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 renderA.style.userSelect = "none"
                 renderA.style.marginBottom = "100px"
 
+                let opacity = 100
+                let renderTimer = setInterval(function (){
+                    opacity--
+                    renderA.style.opacity = opacity/100
+                    console.log(renderA.style.opacity)
+                    
+                    if (opacity === 0) {clearInterval(renderTimer)}
+
+                }, 50)
 
             case "Models":
                 protoplasts.remove()
@@ -168,9 +177,11 @@ function addDropDownEventListeners (appendage, menu, content, v) {
     })
 }
 
-function fadeOut (delay) {
+function fadeOut () {
     for (let i = 100; i >= 0; i--) {
-        setTimeout(setOpacity(i), delay)
+        setTimeout(function setOpacity() {
+            renderA.style.opacity = i/100
+        }, 1000)
         console.log(`the opacity is ${renderA.style.opacity}`)
     }
 }
