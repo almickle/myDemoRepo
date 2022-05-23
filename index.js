@@ -159,6 +159,7 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 renderA.style.borderWidth = "1px"
                 renderA.style.borderRadius = "20px"
                 renderA.style.userSelect = "none"
+                renderA.style.marginBottom = "100px"
 
 
             case "Models":
