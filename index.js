@@ -31,6 +31,19 @@ renderContainer.id = "rendercontainer"
 const renderA = document.createElement("img")
 renderA.src = "Images/LoftView.PNG"
 
+const renderB = document.createElement("img")
+renderB.src = "Images/ImageComingSoon.jpg"
+        renderB.style.width = "600px"
+        renderB.style.position = "relative"
+        renderB.style.zIndex = "-2"
+        renderB.style.marginTop = "70px"
+        renderB.style.marginLeft = "82px"
+        renderB.style.borderStyle = "solid"
+        renderB.style.borderWidth = "1px"
+        renderB.style.borderRadius = "20px"
+        renderB.style.userSelect = "none"
+        renderB.style.marginBottom = "100px"
+
 const backArrow = document.createElement("img")
 backArrow.src = "Images/BackArrow.png"
 backArrow.style.width = "50px"
@@ -164,10 +177,13 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                     opacity--
                     renderA.style.opacity = opacity/100
                     console.log(renderA.style.opacity)
-                    
-                    if (opacity === 0) {clearInterval(renderTimer)}
 
-                }, 50)
+                    if (opacity === 0) {
+                        clearInterval(renderTimer)
+                        renderA.replaceWith(renderB)
+                    }
+
+                }, 8)
 
             case "Models":
                 protoplasts.remove()
@@ -176,21 +192,7 @@ function addDropDownEventListeners (appendage, menu, content, v) {
         }
     })
 }
-
-function fadeOut () {
-    for (let i = 100; i >= 0; i--) {
-        setTimeout(function setOpacity() {
-            renderA.style.opacity = i/100
-        }, 1000)
-        console.log(`the opacity is ${renderA.style.opacity}`)
-    }
-}
-
-function setOpacity(c) {
-    renderA.style.opacity = c/100
-}
     
-
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
