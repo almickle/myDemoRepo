@@ -46,6 +46,7 @@ const renderA = document.createElement("img")
 const renderB = document.createElement("img")
     renderB.src = "Images/ImageComingSoon.jpg"
         renderB.style.width = "600px"
+        renderB.style.height = "340px"
         renderB.style.position = "relative"
         renderB.style.zIndex = "-2"
         renderB.style.marginTop = "70px"
@@ -59,7 +60,8 @@ const renderB = document.createElement("img")
 const renderC = document.createElement("img")
     renderC.src = "Images/ImageComingSoon.jpg"
         renderC.style.width = "600px"
-        renderC.style.height = "400px"
+        renderC.style.height = "340px"
+        renderC.style.opacity = "0.5"
         renderC.style.position = "relative"
         renderC.style.zIndex = "-2"
         renderC.style.marginTop = "70px"
@@ -243,6 +245,18 @@ function slideShow () {
 
 }
 
+function fadeOut () {
+    let alpha = 100
+    let fadeOutTimer = setInterval(function () {
+            alpha--
+            renderSlides[currentSlideIndex].style.opacity = alpha/100
+            console.log("a")
+            if (alpha === 0) {
+                clearInterval(fadeOutTimer)
+            }
+    }, 8)
+}
+
 function backClickListener() {
     backArrow.addEventListener ("click", function (event) {
         minusSlideIndex()
@@ -253,20 +267,6 @@ function forwardClickListener() {
     forwardArrow.addEventListener ("click", function (event) {
         plusSlideIndex()
     })
-}
-
-function fadeOut (){
-    let opacity = 100
-    let renderTimer = setInterval(function (){
-            opacity--
-            renderA.style.opacity = opacity/100
-
-            if (opacity === 0) {
-                clearInterval(renderTimer)
-                renderA.replaceWith(renderB)
-            }
-
-    }, 8)
 }
 
 // function calls //
