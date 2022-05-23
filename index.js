@@ -25,7 +25,8 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
-
+const renderContainer = document.createElement("div")
+renderContainer.id = "rendercontainer"
 
 const renderA = document.createElement("img")
 renderA.src = "Images/LoftView.PNG"
@@ -143,14 +144,15 @@ function addDropDownEventListeners (appendage, menu, content, v) {
                 appendage.remove()
                 menuToggle = 0
 
-                document.body.append(backArrow)
-                document.body.append(renderA)
-                document.body.append(forwardArrow)
+                document.body.append(renderContainer)
+                renderContainer.append(backArrow)
+                renderContainer.append(renderA)
+                renderContainer.append(forwardArrow)
                 
 
                 renderA.style.width = "600px"
                 renderA.style.position = "relative"
-                renderA.style.zIndex = "-1"
+                renderA.style.zIndex = "-2"
                 renderA.style.marginTop = "70px"
                 renderA.style.marginLeft = "82px"
                 renderA.style.borderStyle = "solid"
