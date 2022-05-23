@@ -87,3 +87,7 @@ model-viewer {
     margin: 0 auto;
 }
 
+html {
+    zoom: 125%;
+}
+
