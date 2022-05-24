@@ -450,7 +450,10 @@ function forwardClickListener() {
 function clickOut () {
     document.addEventListener ("click", function (event){
         if (menuToggle === 1){
-            navbarMenu.remove()
+            if (event.target.parentElement !== navbar) {
+                navbarMenu.remove()
+                menuToggle = 0
+            }
         }
     })
 }
@@ -466,3 +469,5 @@ backClickListener()
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
 }
+
+clickOut()
