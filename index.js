@@ -81,7 +81,7 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
                 // initial styling: models //
     for (let i = 0; i < modelsArray.length; i++) {
         modelsArray[i].style.width = "600px"
-        modelsArray[i].style.height = "340px"
+        modelsArray[i].style.height = "500px"
         modelsArray[i].style.position = "absolute"
         modelsArray[i].style.zIndex = "-1"
         modelsArray[i].style.marginTop = "230px"
