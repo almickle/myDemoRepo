@@ -96,6 +96,9 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         TetrahedronModel.remove()
 
 
+    // list of content arrarys //
+const contentArray = [renderSlides, modelsArray]
+
         // slideshow arrows //
 const backArrow = document.createElement("img")
     backArrow.src = "Images/BackArrow.png"
@@ -114,6 +117,7 @@ let currentMenu
 let currentSlideIndex = 0
 let nextSlideIndex
 let openMenu
+let contentSelection
 
 
 // function definitions //
@@ -171,20 +175,17 @@ function populateDropDownMenu(appendage, menu, content) {
     while(appendage.firstChild) {appendage.removeChild(appendage.firstChild)}
 
     for (let i = 0; i < menu.length; i++) {
-    appendage.append(menu[i])
+        appendage.append(menu[i])
 
-    menu[i].textContent = content[i]
-    menu[i].style.paddingLeft = "10px"
-    menu[i].style.paddingRight = "10px"
-    menu[i].style.marginTop = "4px"
-    menu[i].style.marginBottom = "4px"
-    menu[i].style.fontFamily = "Trebuchet MS"
-    menu[i].id = content[i]
-    menu[i].style.position = "relative"
-    menu[i].style.zIndex = "1"
-
-    // code for menu partitions: if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
-
+        menu[i].textContent = content[i]
+        menu[i].style.paddingLeft = "10px"
+        menu[i].style.paddingRight = "10px"
+        menu[i].style.marginTop = "4px"
+        menu[i].style.marginBottom = "4px"
+        menu[i].style.fontFamily = "Trebuchet MS"
+        menu[i].id = content[i]
+        menu[i].style.position = "relative"
+        menu[i].style.zIndex = "1"
     }
 }
 
