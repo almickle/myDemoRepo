@@ -80,6 +80,24 @@ const IcosahedronModel = document.getElementById("Icosahedron")
 const OctahedronModel = document.getElementById("Octahedron")
 const TetrahedronModel = document.getElementById("Tetrahedron")
 
+const modelsArray = [DodecahedronModel, HexahedronModel, IcosahedronModel, OctahedronModel, TetrahedronModel]
+
+                // initial styling //
+    for (let i = 0; i < modelsArray.length; i++) {
+        modelsArray[i].style.width = "600px"
+        modelsArray[i].style.height = "340px"
+        modelsArray[i].style.position = "relative"
+        modelsArray[i].style.zIndex = "-2"
+        modelsArray[i].style.borderStyle = "solid"
+        modelsArray[i].style.borderWidth = "1px"
+        modelsArray[i].style.borderRadius = "20px"
+        modelsArray[i].style.marginTop = "210px"
+        modelsArray[i].style.marginLeft = "285px"
+        modelsArray[i].style.userSelect = "none"
+        modelsArray[i].style.marginBottom = "100px"
+}
+
+          // initial removal //
         DodecahedronModel.remove()
         HexahedronModel.remove()
         IcosahedronModel.remove()
@@ -210,12 +228,17 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
 
+                break
+
             case "About":
                 protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
+                break
+
             case "Renders":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
@@ -223,75 +246,70 @@ function addDropDownClickListeners() {
                 contentContainer.append(backArrow)
                 contentContainer.append(renderSlides[currentSlideIndex])
                 contentContainer.append(forwardArrow)
+
+                break
 
             case "Models":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
                 contentContainer.append(backArrow)
-                contentContainer.append(renderSlides[currentSlideIndex])
+                contentContainer.append(modelsArray[currentSlideIndex])
                 contentContainer.append(forwardArrow)
+
+                break
 
             case "Protoplasts":
                 protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
+
+                break
         }
     })
 }
 
-function minusSlideIndex () {
+function minusSlideIndex (param) {
     if (currentSlideIndex > 0) {
         nextSlideIndex = currentSlideIndex - 1
-        slideShow()
+        slideShow(param)
         currentSlideIndex--
     } else {
-        nextSlideIndex = renderSlides.length - 1
-        slideShow()
-        currentSlideIndex = renderSlides.length - 1
+        nextSlideIndex = param.length - 1
+        slideShow(param)
+        currentSlideIndex = param.length - 1
     }
 }
 
-function plusSlideIndex() {
-    if (currentSlideIndex < renderSlides.length - 1) {
+function plusSlideIndex(param) {
+    if (currentSlideIndex < param.length - 1) {
         nextSlideIndex = currentSlideIndex + 1
-        slideShow()
+        slideShow(param)
         currentSlideIndex++
     } else {
         nextSlideIndex = 0
-        slideShow()
+        slideShow(param)
         currentSlideIndex = 0
     }
 }
 
-function slideShow () {
-    renderSlides[currentSlideIndex].replaceWith(renderSlides[nextSlideIndex])
+function slideShow (param) {
+    param[currentSlideIndex].replaceWith(param[nextSlideIndex])
     console.log(`replaced slide:${currentSlideIndex + 1} with slide:${nextSlideIndex + 1}`)
 
 }
 
-function fadeOut () {
-    let alpha = 100
-    let fadeOutTimer = setInterval(function () {
-            alpha--
-            renderSlides[currentSlideIndex].style.opacity = alpha/100
-            console.log("a")
-            if (alpha === 0) {
-                clearInterval(fadeOutTimer)
-            }
-    }, 8)
-}
-
-function backClickListener() {
+function backClickListener(param) {
     backArrow.addEventListener ("click", function (event) {
-        minusSlideIndex()
+        minusSlideIndex(param)
     })
 }
 
-function forwardClickListener() {
+function forwardClickListener(param) {
     forwardArrow.addEventListener ("click", function (event) {
-        plusSlideIndex()
+        plusSlideIndex(param)
     })
 }
 
@@ -299,8 +317,8 @@ function forwardClickListener() {
 
 addDropDownHoverListener()
 addDropDownClickListeners()
-backClickListener()
-forwardClickListener()
+backClickListener(renderSlides)
+forwardClickListener(renderSlides)
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
