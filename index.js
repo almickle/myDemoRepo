@@ -1,10 +1,16 @@
 //elements and styling //
 
-const navbar = document.getElementById("navbar")
-const protoplasts = document.getElementById("protoplasts")
+// navbar //
 
+        // navbar main elements //
+const navbar = document.getElementById("navbar")
 const navbarMenu = document.createElement("div")
 
+             // get menu icons //
+ const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
+
+            
+                 // dropdown menu tabs //
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
 const portfolioMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
 const projectsMenuTab = [document.createElement("p"), document.createElement("p"), document.createElement("p")]
@@ -14,10 +20,10 @@ const contactMenuTab = [document.createElement("p"), document.createElement("p")
 
 const menuTab = [homeMenuTab, portfolioMenuTab, projectsMenuTab, personalMenuTab, experienceMenuTab, contactMenuTab]
 
-const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
+                // dropdown menu margins by tab //
+const menuTabLeft = ["30px", "120px", "230px", "336px", "445px", "571px"]
 
-const iconLeft = ["30px", "120px", "230px", "336px", "445px", "571px"]
-
+            // dropdown menu content //
 const homeMenuContent = ["GitHub", "About"]
 const portfolioMenuContent = ["Renders", "Models", "Animations"]
 const projectsMenuContent = ["Protoplasts", "Terrarium", "Game"]
@@ -27,6 +33,11 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
+
+
+// content //
+
+        // create render elements //
 const contentContainer = document.createElement("div")
     contentContainer.id = "contentcontainer"
 
@@ -42,6 +53,7 @@ const renderC = document.createElement("img")
 
 const renderSlides = [renderA, renderB, renderC]
 
+            // initial styling: renders //
     for (let i = 0; i < renderSlides.length; i++) {
             renderSlides[i].style.width = "600px"
             renderSlides[i].style.height = "340px"
@@ -56,6 +68,7 @@ const renderSlides = [renderA, renderB, renderC]
             renderSlides[i].style.marginBottom = "100px"
     }
 
+                // get models by ID //
 const DodecahedronModel = document.getElementById("Dodecahedron")
 const HexahedronModel = document.getElementById("Hexahedron")
 const IcosahedronModel = document.getElementById("Icosahedron")
@@ -64,21 +77,21 @@ const TetrahedronModel = document.getElementById("Tetrahedron")
 
 const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, TetrahedronModel]
 
-                // initial styling //
+                // initial styling: models //
     for (let i = 0; i < modelsArray.length; i++) {
         modelsArray[i].style.width = "600px"
         modelsArray[i].style.height = "340px"
-        modelsArray[i].style.position = "relative"
+        modelsArray[i].style.position = "absolute"
         modelsArray[i].style.zIndex = "-2"
         modelsArray[i].style.borderStyle = "solid"
         modelsArray[i].style.borderWidth = "1px"
         modelsArray[i].style.borderRadius = "20px"
-        modelsArray[i].style.marginTop = "210px"
-        modelsArray[i].style.marginLeft = "290px"
+        modelsArray[i].style.marginTop = "230px"
+        modelsArray[i].style.marginBottom = "100px"
+        modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.userSelect = "none"
         modelsArray[i].style.marginBottom = "100px"
     }
-
           // initial removal //
         DodecahedronModel.remove()
         HexahedronModel.remove()
@@ -87,12 +100,14 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         TetrahedronModel.remove()
 
 
+        // slideshow arrows //
 const backArrow = document.createElement("img")
     backArrow.src = "Images/BackArrow.png"
         backArrow.style.width = "50px"
         backArrow.style.position = "absolute"
         backArrow.style.zIndex = "1"
         backArrow.style.marginTop = "200px"
+        backArrow.style.float = "left"
 
 const forwardArrow = document.createElement("img")
     forwardArrow.src = "Images/BackArrow.png"
@@ -102,6 +117,7 @@ const forwardArrow = document.createElement("img")
         forwardArrow.style.marginTop = "200px"
         forwardArrow.style.marginLeft = "25px"
         forwardArrow.style.transform = "rotate(180deg)"
+        forwardArrow.style.float = "left"
 
 
 // variables and initial values //
@@ -446,10 +462,5 @@ addDropDownClickListeners()
 determineSlides()
 
 for (n = 0; n < navbarIcon.length; n++) {
-    toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
+    toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
 }
-
-
-
-//backClickListener(renderSlides)
-//forwardClickListener(renderSlides)
