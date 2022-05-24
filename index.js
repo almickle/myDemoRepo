@@ -206,14 +206,18 @@ function addDropDownClickListeners() {
 
         switch (event.target.id) {
             case "GitHub": 
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
-                menuToggle = 0
+                menuToggle = 
+                openMenu = event.target.id
 
                 break
 
             case "About":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
+                openMenu = event.target.id
 
                 break
 
@@ -222,7 +226,6 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openMenu = event.target.id
-                console.log(openMenu)
 
                 contentContainer.append(backArrow)
                 contentContainer.append(renderSlides[currentSlideIndex])
@@ -235,7 +238,6 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openMenu = event.target.id
-                console.log(openMenu)
 
                 contentContainer.append(backArrow)
                 contentContainer.append(modelsArray[currentSlideIndex])
@@ -244,8 +246,114 @@ function addDropDownClickListeners() {
                 break
 
             case "Protoplasts":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
+                openMenu = event.target.id
+
+                break
+
+            case "Terrarium":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+
+            case "Game":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "General":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Education":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Interests":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Blender":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Photoshop":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Unreal Engine":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Maya":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Fusion 360":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Email":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Phone":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
+
+                break
+                
+            case "Twitter":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openMenu = event.target.id
 
                 break
         }
