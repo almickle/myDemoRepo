@@ -87,7 +87,6 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         modelsArray[i].style.marginTop = "230px"
         modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.userSelect = "none"
-        modelsArray[i].style.marginBottom = "100px"
     }
           // initial removal //
         DodecahedronModel.remove()
@@ -424,57 +423,22 @@ function slideShow (param) {
 function backClickListener(param) {
     backArrow.addEventListener ("click", function (event) {
         minusSlideIndex(param)
-    }, {once:true})
+    })
 }
 
 function forwardClickListener(param) {
     forwardArrow.addEventListener ("click", function (event) {
         plusSlideIndex(param)
-    }, {once:true})
-}
-
-function determineSlides() {
-    document.addEventListener("click", function (event){
-        console.log("TCT")
-        switch (openMenu){
-            case "GitHub":
-
-            case "About":
-
-            case "Renders":
-                backClickListener(renderSlides)
-                forwardClickListener(renderSlides)
-            break
-
-            case "Models":
-                backClickListener(modelsArray)
-                forwardClickListener(modelsArray)
-            break
-
-            case "Animations":
-
-            case "Protoplasts":
-            case "Terrarium":
-            case "Game":
-            case "General":
-            case "Education":
-            case "Interests":
-            case "Blender":
-            case "Photoshop":
-            case "Unreal Engine":
-            case "Maya":
-            case "Fusion 360":
-            case "Email":
-            case "Phone":
-            case "Twitter":
-        }
     })
 }
+
+
 // function calls //
 
 addDropDownHoverListener()
 addDropDownClickListeners()
-determineSlides()
+forwardClickListener(modelsArray)
+backClickListener(modelsArray)
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
