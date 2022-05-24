@@ -279,6 +279,14 @@ function addDropDownClickListeners() {
 
                 break
 
+            case "Animations":
+                while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
+                navbarMenu.remove()
+                menuToggle = 0
+                openPage = event.target.id
+    
+                break
+
             case "Protoplasts":
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
