@@ -32,47 +32,29 @@ const contentContainer = document.createElement("div")
 
 const renderA = document.createElement("img")
     renderA.src = "Images/LoftView.PNG"
-        renderA.style.width = "600px"
-        renderA.style.position = "relative"
-        renderA.style.zIndex = "-2"
-        renderA.style.marginTop = "70px"
-        renderA.style.marginLeft = "82px"
-        renderA.style.borderStyle = "solid"
-        renderA.style.borderWidth = "1px"
-        renderA.style.borderRadius = "20px"
-        renderA.style.userSelect = "none"
-        renderA.style.marginBottom = "100px"
 
 const renderB = document.createElement("img")
     renderB.src = "Images/ImageComingSoon.jpg"
-        renderB.style.width = "600px"
-        renderB.style.height = "340px"
-        renderB.style.position = "relative"
-        renderB.style.zIndex = "-2"
-        renderB.style.marginTop = "70px"
-        renderB.style.marginLeft = "82px"
-        renderB.style.borderStyle = "solid"
-        renderB.style.borderWidth = "1px"
-        renderB.style.borderRadius = "20px"
-        renderB.style.userSelect = "none"
-        renderB.style.marginBottom = "100px"
 
 const renderC = document.createElement("img")
     renderC.src = "Images/ImageComingSoon.jpg"
-        renderC.style.width = "600px"
-        renderC.style.height = "340px"
-        renderC.style.opacity = "0.5"
-        renderC.style.position = "relative"
-        renderC.style.zIndex = "-2"
-        renderC.style.marginTop = "70px"
-        renderC.style.marginLeft = "82px"
-        renderC.style.borderStyle = "solid"
-        renderC.style.borderWidth = "1px"
-        renderC.style.borderRadius = "20px"
-        renderC.style.userSelect = "none"
-        renderC.style.marginBottom = "100px"
+    renderC.style.opacity = "0.5"
 
 const renderSlides = [renderA, renderB, renderC]
+
+    for (let i = 0; i < renderSlides.length; i++) {
+            renderSlides[i].style.width = "600px"
+            renderSlides[i].style.height = "340px"
+            renderSlides[i].style.position = "relative"
+            renderSlides[i].style.zIndex = "-2"
+            renderSlides[i].style.marginTop = "70px"
+            renderSlides[i].style.marginLeft = "82px"
+            renderSlides[i].style.borderStyle = "solid"
+            renderSlides[i].style.borderWidth = "1px"
+            renderSlides[i].style.borderRadius = "20px"
+            renderSlides[i].style.userSelect = "none"
+            renderSlides[i].style.marginBottom = "100px"
+    }
 
 const DodecahedronModel = document.getElementById("Dodecahedron")
 const HexahedronModel = document.getElementById("Hexahedron")
@@ -92,10 +74,10 @@ const modelsArray = [DodecahedronModel, HexahedronModel, IcosahedronModel, Octah
         modelsArray[i].style.borderWidth = "1px"
         modelsArray[i].style.borderRadius = "20px"
         modelsArray[i].style.marginTop = "210px"
-        modelsArray[i].style.marginLeft = "285px"
+        modelsArray[i].style.marginLeft = "290px"
         modelsArray[i].style.userSelect = "none"
         modelsArray[i].style.marginBottom = "100px"
-}
+    }
 
           // initial removal //
         DodecahedronModel.remove()
@@ -103,7 +85,6 @@ const modelsArray = [DodecahedronModel, HexahedronModel, IcosahedronModel, Octah
         IcosahedronModel.remove()
         OctahedronModel.remove()
         TetrahedronModel.remove()
-
 
 
 const backArrow = document.createElement("img")
@@ -129,6 +110,7 @@ let menuToggle = 0
 let currentMenu
 let currentSlideIndex = 0
 let nextSlideIndex
+let openMenu
 
 
 // function definitions //
@@ -224,14 +206,12 @@ function addDropDownClickListeners() {
 
         switch (event.target.id) {
             case "GitHub": 
-                protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
                 break
 
             case "About":
-                protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
@@ -239,9 +219,10 @@ function addDropDownClickListeners() {
 
             case "Renders":
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
-                protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
+                openMenu = event.target.id
+                console.log(openMenu)
 
                 contentContainer.append(backArrow)
                 contentContainer.append(renderSlides[currentSlideIndex])
@@ -251,9 +232,10 @@ function addDropDownClickListeners() {
 
             case "Models":
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
-                protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
+                openMenu = event.target.id
+                console.log(openMenu)
 
                 contentContainer.append(backArrow)
                 contentContainer.append(modelsArray[currentSlideIndex])
@@ -262,7 +244,6 @@ function addDropDownClickListeners() {
                 break
 
             case "Protoplasts":
-                protoplasts.remove()
                 navbarMenu.remove()
                 menuToggle = 0
 
@@ -304,22 +285,63 @@ function slideShow (param) {
 function backClickListener(param) {
     backArrow.addEventListener ("click", function (event) {
         minusSlideIndex(param)
-    })
+    }, {once:true})
 }
 
 function forwardClickListener(param) {
     forwardArrow.addEventListener ("click", function (event) {
         plusSlideIndex(param)
-    })
+    }, {once:true})
 }
 
+function determineSlides() {
+    document.addEventListener("click", function (event){
+        console.log("TCT")
+        switch (openMenu){
+            case "GitHub":
+
+            case "About":
+
+            case "Renders":
+                backClickListener(renderSlides)
+                forwardClickListener(renderSlides)
+            break
+
+            case "Models":
+                backClickListener(modelsArray)
+                forwardClickListener(modelsArray)
+            break
+
+            case "Animations":
+
+            case "Protoplasts":
+            case "Terrarium":
+            case "Game":
+            case "General":
+            case "Education":
+            case "Interests":
+            case "Blender":
+            case "Photoshop":
+            case "Unreal Engine":
+            case "Maya":
+            case "Fusion 360":
+            case "Email":
+            case "Phone":
+            case "Twitter":
+        }
+    })
+}
 // function calls //
 
 addDropDownHoverListener()
 addDropDownClickListeners()
-backClickListener(renderSlides)
-forwardClickListener(renderSlides)
+determineSlides()
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, iconLeft[n], menuTab[n], menuContentList[n])
 }
+
+
+
+//backClickListener(renderSlides)
+//forwardClickListener(renderSlides)
