@@ -14,6 +14,7 @@ function fadeOut () {
                 <img src="Images/Protoplasts.JPG">
             </div>
 
+// code for menu partitions: if (i < menu.length - 1) { menu[i+1].style.borderTop = "solid"; menu[i+1].style.borderWidth = "1px"}
 
 function determineSlides() {
     document.addEventListener("click", function (event){
@@ -52,3 +53,33 @@ function determineSlides() {
         }
     })
 }
+
+
+
+
+switch (openMenu){
+            case "GitHub":
+            case "About":
+            case "Renders":
+                contentSelection = contentArray[0]
+            break
+
+            case "Models":
+                contentSelection = contentArray[1]
+            break
+
+            case "Animations":
+            case "Protoplasts":
+            case "Terrarium":
+            case "Game":
+            case "General":
+            case "Education":
+            case "Interests":
+            case "Blender":
+            case "Photoshop":
+            case "Unreal Engine":
+            case "Maya":
+            case "Fusion 360":
+            case "Email":
+            case "Phone":
+            case "Twitter":
