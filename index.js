@@ -114,11 +114,10 @@ const forwardArrow = document.createElement("img")
 
 let menuToggle = 0
 let currentMenu
-let currentSlideIndex = 0
+let currentSlideIndex
 let nextSlideIndex
 let openPage
-let contentSelection
-let x
+let contentIndex
 
 
 // function definitions //
@@ -230,6 +229,8 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
+                contentIndex = 0
+                currentSlideIndex = 0
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
@@ -256,6 +257,8 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
+                contentIndex = 1
+                currentSlideIndex = 0
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
@@ -408,14 +411,14 @@ function minusSlideIndex () {
         slideShow()
         currentSlideIndex--
     } else {
-        nextSlideIndex = contentArray[x].length - 1
+        nextSlideIndex = contentArray[contentIndex].length - 1
         slideShow()
-        currentSlideIndex = contentArray[x].length - 1
+        currentSlideIndex = contentArray[contentIndex].length - 1
     }
 }
 
 function plusSlideIndex() {
-    if (currentSlideIndex < contentArray[x].length - 1) {
+    if (currentSlideIndex < contentArray[contentIndex].length - 1) {
         nextSlideIndex = currentSlideIndex + 1
         slideShow()
         currentSlideIndex++
@@ -427,51 +430,38 @@ function plusSlideIndex() {
 }
 
 function slideShow () {
-    contentArray[x][currentSlideIndex].replaceWith(contentArray[x][nextSlideIndex])
+    contentArray[contentIndex][currentSlideIndex].replaceWith(contentArray[contentIndex][nextSlideIndex])
     console.log(`replaced slide:${currentSlideIndex + 1} with slide:${nextSlideIndex + 1}`)
 
 }
 
 function backClickListener() {
     backArrow.addEventListener ("click", function (event) {
-        switch (openPage) {
-            case "Renders":
-                x = 0
-            break
-            
-            case "Models":
-                x = 1
-            break
-        }
         minusSlideIndex()
     })
 }
 
 function forwardClickListener() {
     forwardArrow.addEventListener ("click", function (event) {
-        switch (openPage) {
-            case "Renders":
-                x = 0
-            break
-            
-            case "Models":
-                x = 1
-            break
-        }
         plusSlideIndex()
     })
 }
 
+function clickOut () {
+    document.addEventListener ("click", function (event){
+        if (menuToggle === 1){
+            navbarMenu.remove()
+        }
+    })
+}
 
 // function calls //
 
 addDropDownHoverListener()
 addDropDownClickListeners()
 
-if (openPage = 1) {
 forwardClickListener()
 backClickListener()
-}
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
