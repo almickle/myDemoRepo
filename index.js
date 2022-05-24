@@ -434,7 +434,6 @@ function slideShow () {
 
 function backClickListener() {
     backArrow.addEventListener ("click", function (event) {
-        console.log(openPage)
         switch (openPage) {
             case "Renders":
                 x = 0
@@ -444,14 +443,12 @@ function backClickListener() {
                 x = 1
             break
         }
-        console.log(`x = ${x}`)
         minusSlideIndex()
     })
 }
 
 function forwardClickListener() {
     forwardArrow.addEventListener ("click", function (event) {
-        console.log(openPage)
         switch (openPage) {
             case "Renders":
                 x = 0
