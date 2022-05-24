@@ -76,7 +76,7 @@ const IcosahedronModel = document.getElementById("Icosahedron")
 const OctahedronModel = document.getElementById("Octahedron")
 const TetrahedronModel = document.getElementById("Tetrahedron")
 
-const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, TetrahedronModel]
+const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, TetrahedronModel, DodecahedronModel]
 
                 // initial styling: models //
     for (let i = 0; i < modelsArray.length; i++) {
