@@ -116,8 +116,9 @@ let menuToggle = 0
 let currentMenu
 let currentSlideIndex = 0
 let nextSlideIndex
-let openMenu
+let openPage
 let contentSelection
+let x
 
 
 // function definitions //
@@ -213,7 +214,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
 
@@ -221,7 +222,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
 
@@ -229,7 +230,8 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
+                console.log(`Open page: ${openPage}`)
 
                 contentContainer.append(backArrow)
                     backArrow.style.width = "50px"
@@ -254,7 +256,8 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
+                console.log(`Open page: ${openPage}`)
 
                 contentContainer.append(backArrow)
                     backArrow.style.width = "50px"
@@ -280,7 +283,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
 
@@ -288,7 +291,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
 
@@ -296,7 +299,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -304,7 +307,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -312,7 +315,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -320,7 +323,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -328,7 +331,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -336,7 +339,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -344,7 +347,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -352,7 +355,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -360,7 +363,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -368,7 +371,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -376,7 +379,7 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
                 
@@ -384,52 +387,73 @@ function addDropDownClickListeners() {
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openMenu = event.target.id
+                openPage = event.target.id
 
                 break
         }
     })
 }
 
-function minusSlideIndex (param) {
+function minusSlideIndex () {
     if (currentSlideIndex > 0) {
         nextSlideIndex = currentSlideIndex - 1
-        slideShow(param)
+        slideShow()
         currentSlideIndex--
     } else {
-        nextSlideIndex = param.length - 1
-        slideShow(param)
-        currentSlideIndex = param.length - 1
+        nextSlideIndex = contentArray[x].length - 1
+        slideShow()
+        currentSlideIndex = contentArray[x].length - 1
     }
 }
 
-function plusSlideIndex(param) {
-    if (currentSlideIndex < param.length - 1) {
+function plusSlideIndex() {
+    if (currentSlideIndex < contentArray[x].length - 1) {
         nextSlideIndex = currentSlideIndex + 1
-        slideShow(param)
+        slideShow()
         currentSlideIndex++
     } else {
         nextSlideIndex = 0
-        slideShow(param)
+        slideShow()
         currentSlideIndex = 0
     }
 }
 
-function slideShow (param) {
-    param[currentSlideIndex].replaceWith(param[nextSlideIndex])
+function slideShow () {
+    contentArray[x][currentSlideIndex].replaceWith(contentArray[x][nextSlideIndex])
     console.log(`replaced slide:${currentSlideIndex + 1} with slide:${nextSlideIndex + 1}`)
 
 }
 
-function backClickListener(param) {
+function backClickListener() {
     backArrow.addEventListener ("click", function (event) {
-        minusSlideIndex(param)
+        console.log(openPage)
+        switch (openPage) {
+            case "Renders":
+                x = 0
+            break
+            
+            case "Models":
+                x = 1
+            break
+        }
+        console.log(`x = ${x}`)
+        minusSlideIndex()
     })
 }
 
-function forwardClickListener(param) {
+function forwardClickListener() {
     forwardArrow.addEventListener ("click", function (event) {
-        plusSlideIndex(param)
+        console.log(openPage)
+        switch (openPage) {
+            case "Renders":
+                x = 0
+            break
+            
+            case "Models":
+                x = 1
+            break
+        }
+        plusSlideIndex()
     })
 }
 
@@ -438,8 +462,11 @@ function forwardClickListener(param) {
 
 addDropDownHoverListener()
 addDropDownClickListeners()
-forwardClickListener(modelsArray)
-backClickListener(modelsArray)
+
+if (openPage = 1) {
+forwardClickListener()
+backClickListener()
+}
 
 for (n = 0; n < navbarIcon.length; n++) {
     toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
