@@ -7,7 +7,7 @@ const navbar = document.getElementById("navbar")
 const navbarMenu = document.createElement("div")
 
              // get menu icons //
- const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
+const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
 
             
                  // dropdown menu tabs //
@@ -37,10 +37,11 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 
 // content //
 
-        // create render elements //
-const contentContainer = document.createElement("div")
+        // universal content container //
+const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
 
+        // create render elements //
 const renderA = document.createElement("img")
     renderA.src = "Images/LoftView.PNG"
 
@@ -83,11 +84,7 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         modelsArray[i].style.height = "340px"
         modelsArray[i].style.position = "absolute"
         modelsArray[i].style.zIndex = "-1"
-        modelsArray[i].style.borderStyle = "solid"
-        modelsArray[i].style.borderWidth = "1px"
-        modelsArray[i].style.borderRadius = "20px"
         modelsArray[i].style.marginTop = "230px"
-        modelsArray[i].style.marginBottom = "100px"
         modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.userSelect = "none"
         modelsArray[i].style.marginBottom = "100px"
@@ -103,21 +100,12 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         // slideshow arrows //
 const backArrow = document.createElement("img")
     backArrow.src = "Images/BackArrow.png"
-        backArrow.style.width = "50px"
-        backArrow.style.position = "absolute"
-        backArrow.style.zIndex = "1"
-        backArrow.style.marginTop = "200px"
-        backArrow.style.float = "left"
+    backArrow.style.userSelect = "none"
 
 const forwardArrow = document.createElement("img")
     forwardArrow.src = "Images/BackArrow.png"
-        forwardArrow.style.width = "50px"
-        forwardArrow.style.position = "absolute"
-        forwardArrow.style.zIndex = "1"
-        forwardArrow.style.marginTop = "200px"
-        forwardArrow.style.marginLeft = "25px"
-        forwardArrow.style.transform = "rotate(180deg)"
-        forwardArrow.style.float = "left"
+    forwardArrow.style.userSelect = "none"
+    forwardArrow.style.transform = "rotate(180deg)"
 
 
 // variables and initial values //
@@ -244,8 +232,21 @@ function addDropDownClickListeners() {
                 openMenu = event.target.id
 
                 contentContainer.append(backArrow)
+                    backArrow.style.width = "50px"
+                    backArrow.style.position = "absolute"
+                    backArrow.style.zIndex = "1"
+                    backArrow.style.marginTop = "200px"
+                    backArrow.style.float = "left"
+
                 contentContainer.append(renderSlides[currentSlideIndex])
+
                 contentContainer.append(forwardArrow)
+                    forwardArrow.style.width = "50px"
+                    forwardArrow.style.position = "absolute"
+                    forwardArrow.style.zIndex = "1"
+                    forwardArrow.style.marginTop = "200px"
+                    forwardArrow.style.marginLeft = "25px"
+                    forwardArrow.style.float = "left"
 
                 break
 
@@ -256,8 +257,22 @@ function addDropDownClickListeners() {
                 openMenu = event.target.id
 
                 contentContainer.append(backArrow)
+                    backArrow.style.width = "50px"
+                    backArrow.style.position = "relative"
+                    backArrow.style.zIndex = "1"
+                    backArrow.style.marginTop = "200px"
+                    backArrow.style.marginRight = "400px"
+                    backArrow.style.float = "left"
+
                 contentContainer.append(modelsArray[currentSlideIndex])
+
                 contentContainer.append(forwardArrow)
+                    forwardArrow.style.width = "50px"
+                    forwardArrow.style.position = "relative"
+                    forwardArrow.style.zIndex = "1"
+                    forwardArrow.style.marginTop = "200px"
+                    forwardArrow.style.marginLeft = "260px"
+                    forwardArrow.style.float = "left"
 
                 break
 
