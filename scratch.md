@@ -9,3 +9,7 @@ function fadeOut () {
             }
     }, 8)
 }
+
+<div id="protoplasts">
+                <img src="Images/Protoplasts.JPG">
+            </div>
