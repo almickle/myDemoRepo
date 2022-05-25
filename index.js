@@ -86,7 +86,7 @@ const educationContent = document.createElement("p")
             // Nepal content //
 const nepalLogo = document.createElement("img")
     nepalLogo.id = "logoNepal"
-    nepalLogo.src = "Images/WhereThereBeDragons(cropped).jpg"
+    nepalLogo.src = "Images/WhereThereBeDragons.jpg"
         nepalLogo.style.width = "140px"
         nepalLogo.style.position = "absolute"
         nepalLogo.style.zIndex = "-2"
