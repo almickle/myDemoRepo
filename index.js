@@ -42,6 +42,7 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 
         // universal content container //
 const contentContainer = document.getElementById("contentcontainer")
+        contentContainer.style.display = "flex"
 
          // temporary placeholder //
 const comingSoon = document.createElement("img")
@@ -57,13 +58,16 @@ const comingSoon = document.createElement("img")
         // education content //
 
             // CCU content //
+const ccuContent = document.createElement("div")
+
 const logoCCU = document.createElement("img")
     logoCCU.id = "logoCCU"
     logoCCU.src = "Images/CCU.png"
         logoCCU.style.width = "90px"
         logoCCU.style.position = "absolute"
         logoCCU.style.zIndex = "-1"
-        logoCCU.style.left = "-90px"
+        logoCCU.style.left = "-100px"
+        logoCCU.style.top = "-5px"
 
 const degree = document.createElement("h2")
     degree.id = "degree"
@@ -71,8 +75,6 @@ const degree = document.createElement("h2")
         degree.style.position = "relative"
         degree.style.zIndex = "-1"
         degree.style.fontFamily= "Trebuchet MS"
-        degree.style.marginTop = "30px"
-        degree.style.marginLeft = "265px"
     
 const university = document.createElement("h3")
     university.id = "university"
@@ -80,30 +82,30 @@ const university = document.createElement("h3")
         university.style.position = "relative"
         university.style.zIndex = "-1"
         university.style.fontFamily= "Trebuchet MS"
-        university.style.marginLeft = "265px"
+        university.style.top = "-14px"
         
 
-const educationContent = document.createElement("p")
-    educationContent.id = "education paragraph"
-    educationContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
-        educationContent.style.position = "relative"
-        educationContent.style.zIndex = "-1"
-        educationContent.style.fontFamily= "Trebuchet MS"
-        educationContent.style.marginLeft = "265px"
-        educationContent.style.marginRight = "25%"
-        educationContent.style.paddingBottom = "10px"
+const CCUParagraph = document.createElement("p")
+    CCUParagraph.id = "education paragraph"
+    CCUParagraph.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        CCUParagraph.style.position = "relative"
+        CCUParagraph.style.zIndex = "-1"
+        CCUParagraph.style.fontFamily= "Trebuchet MS"
+        CCUParagraph.style.top = "-20px"
 
 // ---------------------------------------------------------------------------- //
 
             // Nepal content //
+const nepalContent = document.createElement("div")
+
 const nepalLogo = document.createElement("img")
     nepalLogo.id = "logoNepal"
     nepalLogo.src = "Images/WhereThereBeDragons.jpg"
         nepalLogo.style.width = "140px"
         nepalLogo.style.position = "absolute"
         nepalLogo.style.zIndex = "-1"
-        nepalLogo.style.marginLeft = "-333px"
-        nepalLogo.style.marginTop = "-15px"
+        nepalLogo.style.left = "-135px"
+        nepalLogo.style.top = "-20px"
 
 const nepalProgram = document.createElement("h2")
     nepalProgram.id = "nepal program"
@@ -111,7 +113,6 @@ const nepalProgram = document.createElement("h2")
         nepalProgram.style.position = "relative"
         nepalProgram.style.zIndex = "-1"
         nepalProgram.style.fontFamily= "Trebuchet MS"
-        nepalProgram.style.marginLeft = "265px"
 
 const nepalInstitute = document.createElement("h3")
     nepalInstitute.id = "Where There Be Dragons"
@@ -119,17 +120,15 @@ const nepalInstitute = document.createElement("h3")
         nepalInstitute.style.position = "relative"
         nepalInstitute.style.zIndex = "-1"
         nepalInstitute.style.fontFamily= "Trebuchet MS"
-        nepalInstitute.style.marginLeft = "265px"
+        nepalInstitute.style.top = "-14px"
 
-const nepalContent = document.createElement("p")
-    nepalContent.id = "nepal paragraph"
-    nepalContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
-        nepalContent.style.position = "relative"
-        nepalContent.style.zIndex = "-1"
-        nepalContent.style.fontFamily= "Trebuchet MS"
-        nepalContent.style.marginLeft = "265px"
-        nepalContent.style.marginRight = "25%"
-        nepalContent.style.paddingBottom = "100px"
+const nepalParagraph = document.createElement("p")
+    nepalParagraph.id = "nepal paragraph"
+    nepalParagraph.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        nepalParagraph.style.position = "relative"
+        nepalParagraph.style.zIndex = "-1"
+        nepalParagraph.style.fontFamily= "Trebuchet MS"
+        nepalParagraph.style.top = "-20px"
 
 // ----------------------------------------------------------------------------------------------- //
             
@@ -374,8 +373,7 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
-                contentContainer.style.display = "flex"
-                contentContainer.style.direction = "row"
+                contentContainer.style.flexDirection = "row"
                 contentContainer.style.marginTop = "30px"
                 contentContainer.style.marginLeft = "225px"
                 contentContainer.style.marginBottom = "100px"
@@ -463,18 +461,25 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+                console.log(`Open page: ${openPage}`)
 
-                contentContainer.style.direction = "column"
+                contentContainer.style.flexDirection = "column"
+                contentContainer.style.marginLeft = "265px"
+                contentContainer.style.marginRight = "25%"
+                contentContainer.style.marginBottom = "100px"
+
+                contentContainer.append(ccuContent)
 
                 degree.append(logoCCU)
-                contentContainer.append(degree)
-                contentContainer.append(university)
-                contentContainer.append(educationContent)
+                ccuContent.append(degree)
+                ccuContent.append(university)
+                ccuContent.append(CCUParagraph)
 
-                nepalProgram.append(nepalLogo)
-                contentContainer.append(nepalProgram)
-                contentContainer.append(nepalInstitute)
                 contentContainer.append(nepalContent)
+                nepalProgram.append(nepalLogo)
+                nepalContent.append(nepalProgram)
+                nepalContent.append(nepalInstitute)
+                nepalContent.append(nepalParagraph)
 
                 break
                 
