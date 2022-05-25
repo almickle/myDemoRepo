@@ -40,18 +40,47 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
         // universal content container //
 const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
-        //contentContainer.style.position = "relative"
 
             // education content //
-const educationContent = document.getElementById("education paragraph")
+const logoCCU = document.createElement("img")
+    logoCCU.id = "logoCCU"
+    logoCCU.src = "Images/CCU.png"
+        logoCCU.style.width = "90px"
+        logoCCU.style.position = "absolute"
+        logoCCU.style.zIndex = "-2"
+        logoCCU.style.marginLeft = "-290px"
+
+const degree = document.createElement("h2")
+    degree.id = "degree"
+    degree.textContent = "B.S. Biochemistry"
+        degree.style.position = "absolute"
+        degree.style.zIndex = "-2"
+        degree.style.marginTop = "200px"
+        degree.style.marginRight = "350px"
+        degree.style.marginLeft = "260px"
+        degree.style.fontFamily= "Trebuchet MS"
+    
+const university = document.createElement("h3")
+    university.id = "university"
+    university.textContent = "Coastal Carolina University"
+        university.style.position = "absolute"
+        university.style.zIndex = "-2"
+        university.style.marginTop = "235px"
+        university.style.marginRight = "350px"
+        university.style.marginLeft = "260px"
+        university.style.fontFamily= "Trebuchet MS"
+
+const educationContent = document.createElement("p")
+    educationContent.id = "education paragraph"
+    educationContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
         educationContent.style.position = "absolute"
         educationContent.style.zIndex = "-2"
-        educationContent.style.marginTop = "200px"
+        educationContent.style.marginTop = "265px"
         educationContent.style.marginRight = "350px"
-        educationContent.style.marginLeft = "250px"
+        educationContent.style.marginLeft = "260px"
+        educationContent.style.paddingBottom = "100px"
         educationContent.style.fontFamily= "Trebuchet MS"
 
-        educationContent.remove()
 
         // create render elements //
 const renderA = document.createElement("img")
@@ -99,6 +128,7 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         modelsArray[i].style.marginTop = "230px"
         modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.userSelect = "none"
+        modelsArray[i].style.paddingBottom = "100px"
     }
           // initial removal //
         DodecahedronModel.remove()
@@ -340,6 +370,9 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                degree.append(logoCCU)
+                contentContainer.append(degree)
+                contentContainer.append(university)
                 contentContainer.append(educationContent)
 
                 break
