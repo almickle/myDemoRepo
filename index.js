@@ -41,6 +41,14 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
 
+const comingSoon = document.createElement("img")
+    comingSoon.src = "https://t3.ftcdn.net/jpg/02/91/50/24/360_F_291502443_1h4oDbxKdgGavtlcNkQYwFquJKB2l9bd.jpg"
+        comingSoon.style.width = "400px"
+        comingSoon.style.position = "relative"
+        comingSoon.style.zIndex = "-2"
+        comingSoon.style.marginTop = "130px"
+        comingSoon.style.marginLeft = "180px"
+
         // education content //
 
             // CCU content //
@@ -300,6 +308,8 @@ function addDropDownClickListeners() {
                 menuToggle = 
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
 
             case "About":
@@ -307,6 +317,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
 
@@ -372,6 +384,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
     
                 break
 
@@ -381,6 +395,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
 
             case "Terrarium":
@@ -389,13 +405,17 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
 
             case "Game":
                 while(contentContainer.firstChild){contentContainer.removeChild(contentContainer.firstChild)}
                 navbarMenu.remove()
                 menuToggle = 0
-                openPage = event.target.id
+                openPage = event.target.
+                
+                contentContainer.append(comingSoon)
 
                 break
                 
@@ -404,6 +424,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
                 
@@ -431,6 +453,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
                 
             case "Blender":
@@ -438,6 +462,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
                 
@@ -447,6 +473,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
                 
             case "Unreal Engine":
@@ -454,6 +482,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
                 
@@ -463,6 +493,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
                 
             case "Fusion 360":
@@ -470,6 +502,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
                 
@@ -479,6 +513,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
                 
             case "Phone":
@@ -487,6 +523,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.append(comingSoon)
+
                 break
                 
             case "Twitter":
@@ -494,6 +532,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(comingSoon)
 
                 break
         }
