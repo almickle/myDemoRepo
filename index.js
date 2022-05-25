@@ -40,6 +40,18 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
         // universal content container //
 const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
+        //contentContainer.style.position = "relative"
+
+            // education content //
+const educationContent = document.getElementById("education paragraph")
+        educationContent.style.position = "absolute"
+        educationContent.style.zIndex = "-2"
+        educationContent.style.marginTop = "200px"
+        educationContent.style.marginRight = "350px"
+        educationContent.style.marginLeft = "250px"
+        educationContent.style.fontFamily= "Trebuchet MS"
+
+        educationContent.remove()
 
         // create render elements //
 const renderA = document.createElement("img")
@@ -327,6 +339,8 @@ function addDropDownClickListeners() {
                 navbarMenu.remove()
                 menuToggle = 0
                 openPage = event.target.id
+
+                contentContainer.append(educationContent)
 
                 break
                 
