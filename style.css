@@ -1,6 +1,13 @@
 body {
     background: white;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+}
+
+div#topcontainer {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -11,6 +18,7 @@ body div#navbar {
 
     margin-top: 120px;
     margin-left: 40px;
+    margin-right: 25%;
 
     padding-top: 10px;
     padding-bottom: 10px;
@@ -45,8 +53,6 @@ body div#navbar {
     font-family: 'Trebuchet MS';
 
     cursor: default;
-    -moz-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
 
 }
