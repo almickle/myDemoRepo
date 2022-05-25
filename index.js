@@ -41,14 +41,16 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
 
-            // education content //
+        // education content //
+
+            // CCU content //
 const logoCCU = document.createElement("img")
     logoCCU.id = "logoCCU"
     logoCCU.src = "Images/CCU.png"
         logoCCU.style.width = "90px"
         logoCCU.style.position = "absolute"
         logoCCU.style.zIndex = "-2"
-        logoCCU.style.marginLeft = "-290px"
+        logoCCU.style.marginLeft = "-295px"
 
 const degree = document.createElement("h2")
     degree.id = "degree"
@@ -57,7 +59,7 @@ const degree = document.createElement("h2")
         degree.style.zIndex = "-2"
         degree.style.marginTop = "200px"
         degree.style.marginRight = "350px"
-        degree.style.marginLeft = "260px"
+        degree.style.marginLeft = "265px"
         degree.style.fontFamily= "Trebuchet MS"
     
 const university = document.createElement("h3")
@@ -67,7 +69,7 @@ const university = document.createElement("h3")
         university.style.zIndex = "-2"
         university.style.marginTop = "235px"
         university.style.marginRight = "350px"
-        university.style.marginLeft = "260px"
+        university.style.marginLeft = "265px"
         university.style.fontFamily= "Trebuchet MS"
 
 const educationContent = document.createElement("p")
@@ -77,9 +79,50 @@ const educationContent = document.createElement("p")
         educationContent.style.zIndex = "-2"
         educationContent.style.marginTop = "265px"
         educationContent.style.marginRight = "350px"
-        educationContent.style.marginLeft = "260px"
+        educationContent.style.marginLeft = "265px"
         educationContent.style.paddingBottom = "100px"
         educationContent.style.fontFamily= "Trebuchet MS"
+
+            // Nepal content //
+const nepalLogo = document.createElement("img")
+    nepalLogo.id = "logoNepal"
+    nepalLogo.src = "Images/WhereThereBeDragons(cropped).jpg"
+        nepalLogo.style.width = "140px"
+        nepalLogo.style.position = "absolute"
+        nepalLogo.style.zIndex = "-2"
+        nepalLogo.style.marginLeft = "-333px"
+        nepalLogo.style.marginTop = "-15px"
+
+const nepalProgram = document.createElement("h2")
+    nepalProgram.id = "nepal program"
+    nepalProgram.textContent = "Himalayan Studies"
+        nepalProgram.style.position = "absolute"
+        nepalProgram.style.zIndex = "-2"
+        nepalProgram.style.marginTop = "640px"
+        nepalProgram.style.marginRight = "350px"
+        nepalProgram.style.marginLeft = "265px"
+        nepalProgram.style.fontFamily= "Trebuchet MS"
+
+const nepalInstitute = document.createElement("h3")
+    nepalInstitute.id = "Where There Be Dragons"
+    nepalInstitute.textContent = "Where There Be Dragons"
+        nepalInstitute.style.position = "absolute"
+        nepalInstitute.style.zIndex = "-2"
+        nepalInstitute.style.marginTop = "675px"
+        nepalInstitute.style.marginRight = "350px"
+        nepalInstitute.style.marginLeft = "265px"
+        nepalInstitute.style.fontFamily= "Trebuchet MS"
+
+const nepalContent = document.createElement("p")
+    nepalContent.id = "nepal paragraph"
+    nepalContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        nepalContent.style.position = "absolute"
+        nepalContent.style.zIndex = "-2"
+        nepalContent.style.marginTop = "705px"
+        nepalContent.style.marginRight = "350px"
+        nepalContent.style.marginLeft = "265px"
+        nepalContent.style.paddingBottom = "100px"
+        nepalContent.style.fontFamily= "Trebuchet MS"
 
 
         // create render elements //
@@ -374,6 +417,11 @@ function addDropDownClickListeners() {
                 contentContainer.append(degree)
                 contentContainer.append(university)
                 contentContainer.append(educationContent)
+
+                nepalProgram.append(nepalLogo)
+                contentContainer.append(nepalProgram)
+                contentContainer.append(nepalInstitute)
+                contentContainer.append(nepalContent)
 
                 break
                 
