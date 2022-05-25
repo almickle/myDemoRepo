@@ -1,5 +1,7 @@
 //elements and styling //
 
+// ------------------------------------------------------------------------------------------------- //
+
 // navbar //
 
         // navbar main elements //
@@ -34,6 +36,7 @@ const contactMenuContent = ["Email", "Phone", "Twitter"]
 const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuContent, personalMenuContent, experienceMenuContent, contactMenuContent]
 
 
+// ----------------------------------------------------------------------------------------------------- //
 
 // content //
 
@@ -41,6 +44,7 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 const contentContainer = document.createElement("span")
     contentContainer.id = "contentcontainer"
 
+         // temporary placeholder //
 const comingSoon = document.createElement("img")
     comingSoon.src = "https://t3.ftcdn.net/jpg/02/91/50/24/360_F_291502443_1h4oDbxKdgGavtlcNkQYwFquJKB2l9bd.jpg"
         comingSoon.style.width = "400px"
@@ -48,6 +52,8 @@ const comingSoon = document.createElement("img")
         comingSoon.style.zIndex = "-2"
         comingSoon.style.marginTop = "130px"
         comingSoon.style.marginLeft = "180px"
+    
+// ---------------------------------------------------------------------------------------------------- //
 
         // education content //
 
@@ -91,6 +97,8 @@ const educationContent = document.createElement("p")
         educationContent.style.paddingBottom = "100px"
         educationContent.style.fontFamily= "Trebuchet MS"
 
+// ---------------------------------------------------------------------------- //
+
             // Nepal content //
 const nepalLogo = document.createElement("img")
     nepalLogo.id = "logoNepal"
@@ -132,8 +140,10 @@ const nepalContent = document.createElement("p")
         nepalContent.style.paddingBottom = "100px"
         nepalContent.style.fontFamily= "Trebuchet MS"
 
+// ----------------------------------------------------------------------------------------------- //
+            
+            // renders content //
 
-        // create render elements //
 const renderA = document.createElement("img")
     renderA.src = "Images/LoftView.PNG"
 
@@ -161,7 +171,10 @@ const renderSlides = [renderA, renderB, renderC]
             renderSlides[i].style.marginBottom = "100px"
     }
 
-                // get models by ID //
+// -------------------------------------------------------------------------------------------- //
+
+                // models content //
+
 const DodecahedronModel = document.getElementById("Dodecahedron")
 const HexahedronModel = document.getElementById("Hexahedron")
 const IcosahedronModel = document.getElementById("Icosahedron")
@@ -189,6 +202,10 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         TetrahedronModel.remove()
 
 
+// ---------------------------------------------------------------------------------------------- //
+
+            // slideshow //   
+
     // list of content arrays //
 const contentArray = [renderSlides, modelsArray]
 
@@ -203,6 +220,8 @@ const forwardArrow = document.createElement("img")
     forwardArrow.style.transform = "rotate(180deg)"
 
 
+// -------------------------------------------------------------------------------------------- //
+
 // variables and initial values //
 
 let menuToggle = 0
@@ -213,7 +232,13 @@ let openPage
 let contentIndex
 
 
+// --------------------------------------------------------------------------------------- //
+
 // function definitions //
+
+// ------------------------------------------------------------------------------------- //
+
+// navbar functions //
 
 function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, content) {
     elementID.addEventListener("click", function (event) {
@@ -296,6 +321,21 @@ function addDropDownHoverListener () {
         }
     })
 }
+
+function clickOut () {
+    document.addEventListener ("click", function (event){
+        if (menuToggle === 1){
+            if (event.target.parentElement !== navbar) {
+                navbarMenu.remove()
+                menuToggle = 0
+            }
+        }
+    })
+}
+
+// --------------------------------------------------------------------------------------- //
+
+// content functions //
 
 function addDropDownClickListeners() {
     document.body.append(contentContainer)
@@ -540,6 +580,10 @@ function addDropDownClickListeners() {
     })
 }
 
+// -------------------------------------------------------------------------------------- //
+
+// slideshow functions //
+
 function minusSlideIndex () {
     if (currentSlideIndex > 0) {
         nextSlideIndex = currentSlideIndex - 1
@@ -582,16 +626,8 @@ function forwardClickListener() {
     })
 }
 
-function clickOut () {
-    document.addEventListener ("click", function (event){
-        if (menuToggle === 1){
-            if (event.target.parentElement !== navbar) {
-                navbarMenu.remove()
-                menuToggle = 0
-            }
-        }
-    })
-}
+
+// ---------------------------------------------------------------------------------------- //
 
 // function calls //
 
