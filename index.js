@@ -464,6 +464,8 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
+                contentContainer.style.direction = "column"
+
                 degree.append(logoCCU)
                 contentContainer.append(degree)
                 contentContainer.append(university)
