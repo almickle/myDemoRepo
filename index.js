@@ -96,7 +96,7 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         TetrahedronModel.remove()
 
 
-    // list of content arrarys //
+    // list of content arrays //
 const contentArray = [renderSlides, modelsArray]
 
         // slideshow arrows //
