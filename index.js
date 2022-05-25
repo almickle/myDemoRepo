@@ -41,8 +41,7 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 // content //
 
         // universal content container //
-const contentContainer = document.createElement("span")
-    contentContainer.id = "contentcontainer"
+const contentContainer = document.getElementById("contentcontainer")
 
          // temporary placeholder //
 const comingSoon = document.createElement("img")
@@ -63,39 +62,36 @@ const logoCCU = document.createElement("img")
     logoCCU.src = "Images/CCU.png"
         logoCCU.style.width = "90px"
         logoCCU.style.position = "absolute"
-        logoCCU.style.zIndex = "-2"
-        logoCCU.style.marginLeft = "-295px"
+        logoCCU.style.zIndex = "-1"
+        logoCCU.style.left = "-90px"
 
 const degree = document.createElement("h2")
     degree.id = "degree"
     degree.textContent = "B.S. Biochemistry"
-        degree.style.position = "absolute"
-        degree.style.zIndex = "-2"
-        degree.style.marginTop = "200px"
-        degree.style.marginRight = "350px"
-        degree.style.marginLeft = "265px"
+        degree.style.position = "relative"
+        degree.style.zIndex = "-1"
         degree.style.fontFamily= "Trebuchet MS"
+        degree.style.marginTop = "30px"
+        degree.style.marginLeft = "265px"
     
 const university = document.createElement("h3")
     university.id = "university"
     university.textContent = "Coastal Carolina University"
-        university.style.position = "absolute"
-        university.style.zIndex = "-2"
-        university.style.marginTop = "235px"
-        university.style.marginRight = "350px"
-        university.style.marginLeft = "265px"
+        university.style.position = "relative"
+        university.style.zIndex = "-1"
         university.style.fontFamily= "Trebuchet MS"
+        university.style.marginLeft = "265px"
+        
 
 const educationContent = document.createElement("p")
     educationContent.id = "education paragraph"
     educationContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
-        educationContent.style.position = "absolute"
-        educationContent.style.zIndex = "-2"
-        educationContent.style.marginTop = "265px"
-        educationContent.style.marginRight = "350px"
-        educationContent.style.marginLeft = "265px"
-        educationContent.style.paddingBottom = "100px"
+        educationContent.style.position = "relative"
+        educationContent.style.zIndex = "-1"
         educationContent.style.fontFamily= "Trebuchet MS"
+        educationContent.style.marginLeft = "265px"
+        educationContent.style.marginRight = "25%"
+        educationContent.style.paddingBottom = "10px"
 
 // ---------------------------------------------------------------------------- //
 
@@ -105,40 +101,35 @@ const nepalLogo = document.createElement("img")
     nepalLogo.src = "Images/WhereThereBeDragons.jpg"
         nepalLogo.style.width = "140px"
         nepalLogo.style.position = "absolute"
-        nepalLogo.style.zIndex = "-2"
+        nepalLogo.style.zIndex = "-1"
         nepalLogo.style.marginLeft = "-333px"
         nepalLogo.style.marginTop = "-15px"
 
 const nepalProgram = document.createElement("h2")
     nepalProgram.id = "nepal program"
     nepalProgram.textContent = "Himalayan Studies"
-        nepalProgram.style.position = "absolute"
-        nepalProgram.style.zIndex = "-2"
-        nepalProgram.style.marginTop = "640px"
-        nepalProgram.style.marginRight = "350px"
-        nepalProgram.style.marginLeft = "265px"
+        nepalProgram.style.position = "relative"
+        nepalProgram.style.zIndex = "-1"
         nepalProgram.style.fontFamily= "Trebuchet MS"
+        nepalProgram.style.marginLeft = "265px"
 
 const nepalInstitute = document.createElement("h3")
     nepalInstitute.id = "Where There Be Dragons"
     nepalInstitute.textContent = "Where There Be Dragons"
-        nepalInstitute.style.position = "absolute"
-        nepalInstitute.style.zIndex = "-2"
-        nepalInstitute.style.marginTop = "675px"
-        nepalInstitute.style.marginRight = "350px"
-        nepalInstitute.style.marginLeft = "265px"
+        nepalInstitute.style.position = "relative"
+        nepalInstitute.style.zIndex = "-1"
         nepalInstitute.style.fontFamily= "Trebuchet MS"
+        nepalInstitute.style.marginLeft = "265px"
 
 const nepalContent = document.createElement("p")
     nepalContent.id = "nepal paragraph"
     nepalContent.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
-        nepalContent.style.position = "absolute"
-        nepalContent.style.zIndex = "-2"
-        nepalContent.style.marginTop = "705px"
-        nepalContent.style.marginRight = "350px"
-        nepalContent.style.marginLeft = "265px"
-        nepalContent.style.paddingBottom = "100px"
+        nepalContent.style.position = "relative"
+        nepalContent.style.zIndex = "-1"
         nepalContent.style.fontFamily= "Trebuchet MS"
+        nepalContent.style.marginLeft = "265px"
+        nepalContent.style.marginRight = "25%"
+        nepalContent.style.paddingBottom = "100px"
 
 // ----------------------------------------------------------------------------------------------- //
             
@@ -161,14 +152,10 @@ const renderSlides = [renderA, renderB, renderC]
             renderSlides[i].style.width = "600px"
             renderSlides[i].style.height = "340px"
             renderSlides[i].style.position = "relative"
-            renderSlides[i].style.zIndex = "-2"
-            renderSlides[i].style.marginTop = "70px"
-            renderSlides[i].style.marginLeft = "82px"
+            renderSlides[i].style.zIndex = "-1"
             renderSlides[i].style.borderStyle = "solid"
             renderSlides[i].style.borderWidth = "1px"
             renderSlides[i].style.borderRadius = "20px"
-            renderSlides[i].style.userSelect = "none"
-            renderSlides[i].style.marginBottom = "100px"
     }
 
 // -------------------------------------------------------------------------------------------- //
@@ -201,6 +188,18 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         OctahedronModel.remove()
         TetrahedronModel.remove()
 
+// --------------------------------------------------------------------------------------------- //
+
+// blender content //
+
+const blenderLogo = document.createElement("img")
+    blenderLogo.src = "Images/BlenderLogo.png"
+            blenderLogo.style.width = "100px"
+            blenderLogo.style.position = "relative"
+            blenderLogo.style.zIndex = "-1"
+            blenderLogo.style.marginTop = "200px"
+            blenderLogo.style.marginRight = "180px"
+            blenderLogo.style.float = "left"
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -212,12 +211,16 @@ const contentArray = [renderSlides, modelsArray]
         // slideshow arrows //
 const backArrow = document.createElement("img")
     backArrow.src = "Images/BackArrow.png"
-    backArrow.style.userSelect = "none"
+            backArrow.style.position = "relative"
+            backArrow.style.width = "50px"
+            backArrow.style.height = "80px"
 
 const forwardArrow = document.createElement("img")
     forwardArrow.src = "Images/BackArrow.png"
-    forwardArrow.style.userSelect = "none"
     forwardArrow.style.transform = "rotate(180deg)"
+            forwardArrow.style.position = "relative"
+            forwardArrow.style.width = "50px"
+            forwardArrow.style.height = "80px"
 
 
 // -------------------------------------------------------------------------------------------- //
@@ -371,22 +374,22 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
-                contentContainer.append(backArrow)
-                    backArrow.style.width = "50px"
-                    backArrow.style.position = "absolute"
-                    backArrow.style.zIndex = "1"
-                    backArrow.style.marginTop = "200px"
-                    backArrow.style.float = "left"
+                contentContainer.style.display = "flex"
+                contentContainer.style.direction = "row"
+                contentContainer.style.marginTop = "30px"
+                contentContainer.style.marginLeft = "225px"
+                contentContainer.style.marginBottom = "100px"
 
+                contentContainer.append(backArrow)
+                   backArrow.style.marginTop = "130px"
+                   backArrow.style.paddingRight = "15px"
+                   
                 contentContainer.append(renderSlides[currentSlideIndex])
 
                 contentContainer.append(forwardArrow)
-                    forwardArrow.style.width = "50px"
-                    forwardArrow.style.position = "absolute"
-                    forwardArrow.style.zIndex = "1"
-                    forwardArrow.style.marginTop = "200px"
-                    forwardArrow.style.marginLeft = "25px"
-                    forwardArrow.style.float = "left"
+                    forwardArrow.style.marginTop = "130px"
+                    forwardArrow.style.paddingRight = "15px"
+                    
 
                 break
 
@@ -399,23 +402,9 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
-                contentContainer.append(backArrow)
-                    backArrow.style.width = "50px"
-                    backArrow.style.position = "relative"
-                    backArrow.style.zIndex = "1"
-                    backArrow.style.marginTop = "200px"
-                    backArrow.style.marginRight = "400px"
-                    backArrow.style.float = "left"
 
                 contentContainer.append(modelsArray[currentSlideIndex])
 
-                contentContainer.append(forwardArrow)
-                    forwardArrow.style.width = "50px"
-                    forwardArrow.style.position = "relative"
-                    forwardArrow.style.zIndex = "1"
-                    forwardArrow.style.marginTop = "200px"
-                    forwardArrow.style.marginLeft = "260px"
-                    forwardArrow.style.float = "left"
 
                 break
 
@@ -503,7 +492,7 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(comingSoon)
+                contentContainer.append(blenderLogo)
 
                 break
                 
@@ -642,3 +631,5 @@ for (n = 0; n < navbarIcon.length; n++) {
 }
 
 clickOut()
+
+
