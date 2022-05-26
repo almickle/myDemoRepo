@@ -11,6 +11,7 @@ const navbarMenu = document.createElement("div")
              // get menu icons //
 const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
 
+
             
                  // dropdown menu tabs //
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
@@ -224,8 +225,11 @@ const forwardArrow = document.createElement("img")
 
 // -------------------------------------------------------------------------------------------- //
 
+
+
 // variables and initial values //
 
+let screenWidth
 let menuToggle = 0
 let currentMenu
 let currentSlideIndex
@@ -464,7 +468,7 @@ function addDropDownClickListeners() {
                 console.log(`Open page: ${openPage}`)
 
                 contentContainer.style.flexDirection = "column"
-                contentContainer.style.marginLeft = "265px"
+                contentContainer.style.marginLeft = "22%"
                 contentContainer.style.marginRight = "25%"
                 contentContainer.style.marginBottom = "100px"
 
@@ -620,6 +624,17 @@ function forwardClickListener() {
     forwardArrow.addEventListener ("click", function (event) {
         plusSlideIndex()
     })
+}
+
+function getScreenWidth() {
+    screenWidth = document.body.clientWidth
+    console.log(screenWidth)
+}
+
+// ---------------------------------------------------------------------------------------- //
+
+function setNavbarButtonSpacing() {
+    
 }
 
 
