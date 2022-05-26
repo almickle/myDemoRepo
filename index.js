@@ -176,11 +176,10 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
     for (let i = 0; i < modelsArray.length; i++) {
         modelsArray[i].style.width = "600px"
         modelsArray[i].style.height = "400px"
-        modelsArray[i].style.position = "absolute"
+        modelsArray[i].style.position = "relative"
         modelsArray[i].style.zIndex = "-1"
-        modelsArray[i].style.marginTop = "230px"
-        modelsArray[i].style.marginLeft = "282px"
-        modelsArray[i].style.userSelect = "none"
+        //modelsArray[i].style.marginTop = "230px"
+        //modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.paddingBottom = "100px"
     }
           // initial removal //
@@ -585,8 +584,21 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
+                contentContainer.style.display = "flex"
+                contentContainer.style.flexDirection = "row"
+                contentContainer.style.margin = "auto"
+                contentContainer.style.right = "20px"
+                contentContainer.style.marginTop = "2%"
+
+                contentContainer.append(backArrow)
+                   backArrow.style.marginTop = "130px"
+                   backArrow.style.paddingRight = "15px"
 
                 contentContainer.append(modelsArray[currentSlideIndex])
+
+                contentContainer.append(forwardArrow)
+                    forwardArrow.style.marginTop = "130px"
+                    forwardArrow.style.paddingRight = "15px"
 
 
                 break
