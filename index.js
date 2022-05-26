@@ -268,6 +268,120 @@ const photoshopText2 = document.createElement("p")
 
 // ---------------------------------------------------------------------------------------------- //
 
+// Unreal Content //
+
+const unrealLogo = document.createElement("img")
+    unrealLogo.src = "Images/UnrealLogo.png"
+        unrealLogo.style.width = "135px"
+        unrealLogo.style.position = "relative"
+        unrealLogo.style.zIndex = "-1"
+        unrealLogo.style.float = "left"
+        unrealLogo.style.paddingRight = "12px"
+        unrealLogo.style.bottom = "12px"
+        unrealLogo.style.right = "0px"
+
+
+const unrealHeader = document.createElement("h1")
+    unrealHeader.textContent = "Unreal Engine"
+        unrealHeader.style.fontFamily = "Trebuchet MS"
+        unrealHeader.style.position = "relative"
+        unrealHeader.style.zIndex = "-1"
+        unrealHeader.style.top = "16px"
+
+const unrealText = document.createElement("p")
+    unrealText.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        unrealText.style.fontFamily = "Trebuchet MS"
+        unrealText.style.position = "relative"
+        unrealText.style.zIndex = "-1"
+        unrealText.style.fontSize = "large"
+        unrealText.style.marginLeft = "2%"
+
+const unrealText2 = document.createElement("p")
+    unrealText2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        unrealText2.style.fontFamily = "Trebuchet MS"
+        unrealText2.style.position = "relative"
+        unrealText2.style.zIndex = "-1"
+        unrealText2.style.fontSize = "large"
+        unrealText2.style.marginLeft = "2%"
+
+// --------------------------------------------------------------------------------------------- //
+
+// Maya Content //
+
+const mayaLogo = document.createElement("img")
+    mayaLogo.src = "Images/MayaLogo.png"
+        mayaLogo.style.width = "135px"
+        mayaLogo.style.position = "relative"
+        mayaLogo.style.zIndex = "-1"
+        mayaLogo.style.float = "left"
+        mayaLogo.style.paddingRight = "12px"
+        mayaLogo.style.bottom = "12px"
+        mayaLogo.style.right = "0px"
+
+
+const mayaHeader = document.createElement("h1")
+    mayaHeader.textContent = "Maya"
+        mayaHeader.style.fontFamily = "Trebuchet MS"
+        mayaHeader.style.position = "relative"
+        mayaHeader.style.zIndex = "-1"
+        mayaHeader.style.top = "16px"
+
+const mayaText = document.createElement("p")
+    mayaText.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        mayaText.style.fontFamily = "Trebuchet MS"
+        mayaText.style.position = "relative"
+        mayaText.style.zIndex = "-1"
+        mayaText.style.fontSize = "large"
+        mayaText.style.marginLeft = "2%"
+
+const mayaText2 = document.createElement("p")
+    mayaText2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        mayaText2.style.fontFamily = "Trebuchet MS"
+        mayaText2.style.position = "relative"
+        mayaText2.style.zIndex = "-1"
+        mayaText2.style.fontSize = "large"
+        mayaText2.style.marginLeft = "2%"
+
+// ---------------------------------------------------------------------------------------------- //
+
+// Fusion 360 Content //
+
+const fusion360Logo = document.createElement("img")
+    fusion360Logo.src = "Images/Fusion360Logo.png"
+        fusion360Logo.style.width = "135px"
+        fusion360Logo.style.position = "relative"
+        fusion360Logo.style.zIndex = "-1"
+        fusion360Logo.style.float = "left"
+        fusion360Logo.style.paddingRight = "12px"
+        fusion360Logo.style.bottom = "12px"
+        fusion360Logo.style.right = "0px"
+
+
+const fusion360Header = document.createElement("h1")
+    fusion360Header.textContent = "Fusion 360"
+        fusion360Header.style.fontFamily = "Trebuchet MS"
+        fusion360Header.style.position = "relative"
+        fusion360Header.style.zIndex = "-1"
+        fusion360Header.style.top = "16px"
+
+const fusion360Text = document.createElement("p")
+    fusion360Text.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        fusion360Text.style.fontFamily = "Trebuchet MS"
+        fusion360Text.style.position = "relative"
+        fusion360Text.style.zIndex = "-1"
+        fusion360Text.style.fontSize = "large"
+        fusion360Text.style.marginLeft = "2%"
+
+const fusion360Text2 = document.createElement("p")
+    fusion360Text2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        fusion360Text2.style.fontFamily = "Trebuchet MS"
+        fusion360Text2.style.position = "relative"
+        fusion360Text2.style.zIndex = "-1"
+        fusion360Text2.style.fontSize = "large"
+        fusion360Text2.style.marginLeft = "2%"
+
+// ---------------------------------------------------------------------------------------------- //
+
             // slideshow //   
 
     // list of content arrays //
@@ -608,7 +722,15 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(comingSoon)
+                contentContainer.style.display = "block"
+                contentContainer.style.marginLeft = "16%"
+                contentContainer.style.marginRight = "18%"
+                contentContainer.style.marginTop = "0px"
+
+                unrealHeader.append(unrealLogo)
+                contentContainer.append(unrealHeader)
+                contentContainer.append(unrealText)
+                contentContainer.append(unrealText2)
 
                 break
                 
@@ -618,7 +740,15 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(comingSoon)
+                contentContainer.style.display = "block"
+                contentContainer.style.marginLeft = "16%"
+                contentContainer.style.marginRight = "18%"
+                contentContainer.style.marginTop = "0px"
+
+                mayaHeader.append(mayaLogo)
+                contentContainer.append(mayaHeader)
+                contentContainer.append(mayaText)
+                contentContainer.append(mayaText2)
 
                 break
                 
@@ -628,7 +758,15 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(comingSoon)
+                contentContainer.style.display = "block"
+                contentContainer.style.marginLeft = "16%"
+                contentContainer.style.marginRight = "18%"
+                contentContainer.style.marginTop = "0px"
+
+                fusion360Header.append(fusion360Logo)
+                contentContainer.append(fusion360Header)
+                contentContainer.append(fusion360Text)
+                contentContainer.append(fusion360Text2)
 
                 break
                 
