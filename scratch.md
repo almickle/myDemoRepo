@@ -83,3 +83,32 @@ switch (openMenu){
             case "Email":
             case "Phone":
             case "Twitter":
+
+
+getScreenWidth()
+console.log(screenWidth)
+buttonMargin = ((screenWidth*screenWidth)/buttonConstant)
+console.log(buttonMargin)
+    for (let i = 0; i < navbarIcon.length; i++) {
+        navbarIcon[i].style.marginLeft = `${buttonMargin}%`
+        navbarIcon[i].style.marginRight = `${buttonMargin}%`
+    }
+
+getScreenWidth()
+    buttonMargin = screenWidth/700
+    for (let i = 0; i < navbarIcon.length; i++) {
+        navbarIcon[i].style.marginLeft = `${buttonMargin}%`
+        navbarIcon[i].style.marginRight = `${buttonMargin}%`
+    }
+    
+window.addEventListener("resize", function (){
+    getScreenWidth()
+    console.log(screenWidth)
+    buttonMargin = ((screenWidth*screenWidth)/buttonConstant)
+    console.log(buttonMargin)
+    for (let i = 0; i < navbarIcon.length; i++) {
+        navbarIcon[i].style.marginLeft = `${buttonMargin}%`
+        navbarIcon[i].style.marginRight = `${buttonMargin}%`
+    }
+    console.log("resized!")
+})
