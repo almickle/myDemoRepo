@@ -228,6 +228,44 @@ const blenderText2 = document.createElement("p")
         blenderText2.style.fontSize = "large"
         blenderText2.style.marginLeft = "2%"
 
+// -------------------------------------------------------------------------------------------------------- //
+
+// Photoshop content //
+
+const photoshopLogo = document.createElement("img")
+    photoshopLogo.src = "Images/PhotoshopLogo.webp"
+        photoshopLogo.style.width = "135px"
+        photoshopLogo.style.position = "relative"
+        photoshopLogo.style.zIndex = "-1"
+        photoshopLogo.style.float = "left"
+        photoshopLogo.style.paddingRight = "12px"
+        photoshopLogo.style.bottom = "12px"
+        photoshopLogo.style.right = "0px"
+
+
+const photoshopHeader = document.createElement("h1")
+    photoshopHeader.textContent = "Photoshop"
+        photoshopHeader.style.fontFamily = "Trebuchet MS"
+        photoshopHeader.style.position = "relative"
+        photoshopHeader.style.zIndex = "-1"
+        photoshopHeader.style.top = "16px"
+
+const photoshopText = document.createElement("p")
+    photoshopText.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        photoshopText.style.fontFamily = "Trebuchet MS"
+        photoshopText.style.position = "relative"
+        photoshopText.style.zIndex = "-1"
+        photoshopText.style.fontSize = "large"
+        photoshopText.style.marginLeft = "2%"
+
+const photoshopText2 = document.createElement("p")
+    photoshopText2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        photoshopText2.style.fontFamily = "Trebuchet MS"
+        photoshopText2.style.position = "relative"
+        photoshopText2.style.zIndex = "-1"
+        photoshopText2.style.fontSize = "large"
+        photoshopText2.style.marginLeft = "2%"
+
 // ---------------------------------------------------------------------------------------------- //
 
             // slideshow //   
@@ -552,7 +590,15 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(comingSoon)
+                contentContainer.style.display = "block"
+                contentContainer.style.marginLeft = "16%"
+                contentContainer.style.marginRight = "18%"
+                contentContainer.style.marginTop = "0px"
+
+                photoshopHeader.append(photoshopLogo)
+                contentContainer.append(photoshopHeader)
+                contentContainer.append(photoshopText)
+                contentContainer.append(photoshopText2)
 
                 break
                 
