@@ -93,6 +93,7 @@ const CCUParagraph = document.createElement("p")
         CCUParagraph.style.zIndex = "-1"
         CCUParagraph.style.fontFamily= "Trebuchet MS"
         CCUParagraph.style.top = "-20px"
+        CCUParagraph.style.fontSize = "large"
 
 // ---------------------------------------------------------------------------- //
 
@@ -130,6 +131,7 @@ const nepalParagraph = document.createElement("p")
         nepalParagraph.style.zIndex = "-1"
         nepalParagraph.style.fontFamily= "Trebuchet MS"
         nepalParagraph.style.top = "-20px"
+        nepalParagraph.style.fontSize = "large"
 
 // ----------------------------------------------------------------------------------------------- //
             
@@ -194,12 +196,37 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
 
 const blenderLogo = document.createElement("img")
     blenderLogo.src = "Images/BlenderLogo.png"
-            blenderLogo.style.width = "100px"
+            blenderLogo.style.width = "135px"
             blenderLogo.style.position = "relative"
             blenderLogo.style.zIndex = "-1"
-            blenderLogo.style.marginTop = "200px"
-            blenderLogo.style.marginRight = "180px"
             blenderLogo.style.float = "left"
+            blenderLogo.style.paddingRight = "12px"
+            blenderLogo.style.bottom = "14px"
+            blenderLogo.style.right = "8px"
+
+
+const blenderHeader = document.createElement("h1")
+        blenderHeader.textContent = "Blender"
+            blenderHeader.style.fontFamily = "Trebuchet MS"
+            blenderHeader.style.position = "relative"
+            blenderHeader.style.zIndex = "-1"
+            blenderHeader.style.top = "16px"
+
+const blenderText = document.createElement("p")
+    blenderText.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        blenderText.style.fontFamily = "Trebuchet MS"
+        blenderText.style.position = "relative"
+        blenderText.style.zIndex = "-1"
+        blenderText.style.fontSize = "large"
+        blenderText.style.marginLeft = "2%"
+
+const blenderText2 = document.createElement("p")
+    blenderText2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non maximus eros. Integer orci nunc, malesuada ac volutpat a, pretium ut leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut scelerisque augue. Morbi id ultricies diam. Etiam at tincidunt sapien. Donec quis ante laoreet, mattis erat ac, pellentesque erat. Nulla sed leo massa. Vivamus sodales, libero non tincidunt facilisis, nibh turpis posuere eros, eget suscipit leo turpis et lectus. Sed et suscipit nisi, ut condimentum ante. Nunc lobortis quis orci sit amet feugiat. Proin eget dolor pellentesque turpis blandit dictum eget sit amet felis. Proin iaculis iaculis est, eu egestas arcu rutrum venenatis. Fusce blandit enim ligula, eu dignissim justo vulputate at. In mattis bibendum turpis, vitae suscipit orci venenatis in. Fusce non ante quis tortor mollis porta a nec nibh. Maecenas quis est gravida, imperdiet purus vel, tempor enim. Etiam egestas odio eget eros fringilla, quis porta sem luctus. Praesent mollis venenatis diam pretium tincidunt. Fusce sit amet nisi nisi. Duis consectetur in turpis id ullamcorper. Vivamus vel auctor tortor. Nam interdum ante et mattis ornare. Phasellus eget mauris at lorem mollis euismod. Nulla vel bibendum mi. Morbi bibendum arcu feugiat iaculis tempus. Donec accumsan eu felis a vehicula. Integer porta ante dapibus aliquet cursus. Integer cursus leo leo, consequat molestie tellus porttitor eget. Sed ullamcorper, diam at semper efficitur, sem quam vehicula nunc, ac porta felis augue et enim. Phasellus scelerisque consequat dapibus."
+        blenderText2.style.fontFamily = "Trebuchet MS"
+        blenderText2.style.position = "relative"
+        blenderText2.style.zIndex = "-1"
+        blenderText2.style.fontSize = "large"
+        blenderText2.style.marginLeft = "2%"
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -378,9 +405,11 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
+                contentContainer.style.display = "flex"
                 contentContainer.style.flexDirection = "row"
                 contentContainer.style.margin = "auto"
                 contentContainer.style.right = "20px"
+                contentContainer.style.marginTop = "2%"
 
                 contentContainer.append(backArrow)
                    backArrow.style.marginTop = "130px"
@@ -467,10 +496,12 @@ function addDropDownClickListeners() {
                 openPage = event.target.id
                 console.log(`Open page: ${openPage}`)
 
+                contentContainer.style.display = "flex"
                 contentContainer.style.flexDirection = "column"
                 contentContainer.style.marginLeft = "22%"
                 contentContainer.style.marginRight = "25%"
                 contentContainer.style.marginBottom = "100px"
+                contentContainer.style.marginTop = "0px"
 
                 contentContainer.append(ccuContent)
 
@@ -503,7 +534,15 @@ function addDropDownClickListeners() {
                 menuToggle = 0
                 openPage = event.target.id
 
-                contentContainer.append(blenderLogo)
+                contentContainer.style.display = "block"
+                contentContainer.style.marginLeft = "16%"
+                contentContainer.style.marginRight = "18%"
+                contentContainer.style.marginTop = "0px"
+
+                blenderHeader.append(blenderLogo)
+                contentContainer.append(blenderHeader)
+                contentContainer.append(blenderText)
+                contentContainer.append(blenderText2)
 
                 break
                 
