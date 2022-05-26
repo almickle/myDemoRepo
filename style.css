@@ -20,12 +20,14 @@ body div#navbar {
 
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
 
     border-radius: 18px;
 
     text-align: center;
     
-    width: 840px;
+    width: 58%;
     height: 30px;
 
 }
@@ -34,9 +36,10 @@ body div#navbar {
     background-color: aliceblue;
     position: relative;
 
-    margin-right: 2%;
-    margin-left: 2%;
     margin-bottom: 2%;
+
+    margin-left: 2.16%;
+    margin-right: 2.16%;
 
     border-radius: 8px;
     border-style: solid;
