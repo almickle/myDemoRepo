@@ -11,7 +11,6 @@ const navbarMenu = document.createElement("div")
              // get menu icons //
 const navbarIcon = [document.getElementById("home"), document.getElementById("portfolio"), document.getElementById("projects"), document.getElementById("personal"), document.getElementById("experience"), document.getElementById("contact")]
 
-
             
                  // dropdown menu tabs //
 const homeMenuTab = [document.createElement("p"), document.createElement("p")]
@@ -229,7 +228,10 @@ const forwardArrow = document.createElement("img")
 
 // variables and initial values //
 
+const buttonConstant =   1755904000 
+const buttonExp = 3
 let screenWidth
+let buttonMargin
 let menuToggle = 0
 let currentMenu
 let currentSlideIndex
@@ -626,15 +628,32 @@ function forwardClickListener() {
     })
 }
 
+// -------------------------------------------------------------------------------------- //
+
+getScreenWidth()
+console.log(screenWidth)
+buttonMargin = ((Math.pow(screenWidth, buttonExp))/buttonConstant)
+console.log(buttonMargin)
+    for (let i = 0; i < navbarIcon.length; i++) {
+        navbarIcon[i].style.marginLeft = `${buttonMargin}%`
+        navbarIcon[i].style.marginRight = `${buttonMargin}%`
+    }
+
+window.addEventListener("resize", function (){
+    getScreenWidth()
+    console.log(screenWidth)
+    buttonMargin = ((Math.pow(screenWidth, buttonExp))/buttonConstant)
+    console.log(buttonMargin)
+    for (let i = 0; i < navbarIcon.length; i++) {
+        navbarIcon[i].style.marginLeft = `${buttonMargin}%`
+        navbarIcon[i].style.marginRight = `${buttonMargin}%`
+    }
+    console.log("resized!")
+})
+
+
 function getScreenWidth() {
     screenWidth = document.body.clientWidth
-    console.log(screenWidth)
-}
-
-// ---------------------------------------------------------------------------------------- //
-
-function setNavbarButtonSpacing() {
-    
 }
 
 
