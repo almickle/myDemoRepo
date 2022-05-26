@@ -178,8 +178,6 @@ const modelsArray = [HexahedronModel, IcosahedronModel, OctahedronModel, Tetrahe
         modelsArray[i].style.height = "400px"
         modelsArray[i].style.position = "relative"
         modelsArray[i].style.zIndex = "-1"
-        //modelsArray[i].style.marginTop = "230px"
-        //modelsArray[i].style.marginLeft = "282px"
         modelsArray[i].style.paddingBottom = "100px"
     }
           // initial removal //
