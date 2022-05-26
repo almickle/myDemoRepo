@@ -277,7 +277,7 @@ const unrealLogo = document.createElement("img")
         unrealLogo.style.zIndex = "-1"
         unrealLogo.style.float = "left"
         unrealLogo.style.paddingRight = "12px"
-        unrealLogo.style.bottom = "12px"
+        unrealLogo.style.bottom = "14px"
         unrealLogo.style.right = "0px"
 
 
