@@ -8,70 +8,58 @@ body {
 div#topcontainer {
     display: flex;
     flex-direction: row;
+    margin-right: 2%;
 }
 
 
 body div#navbar {
     background-color: rgb(220, 220, 220);
 
-    float: left;
-
-    margin-top: 120px;
-    margin-left: 40px;
-    margin-right: 25%;
+    margin-top: 150px;
+    margin-left: 2%;
 
     padding-top: 10px;
     padding-bottom: 10px;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     text-align: center;
-
-    user-select: none;
-
-    width: 680px;
-    height: 20px;
+    
+    width: 840px;
+    height: 30px;
 
 }
 
-#navbar a {
+#navbar button {
     background-color: aliceblue;
+    position: relative;
 
-    margin-right: 12px;
-    margin-left: 12px;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
 
-    border-radius: 7px;
+    border-radius: 8px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
 
-    padding-left: 9px;
-    padding-right: 9px;
-    padding-top: 2px;
-    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 4px;
 
     font-family: 'Trebuchet MS';
+    font-size: larger;
 
     cursor: default;
-    user-select: none;
-
 }
 
-#navbar a:hover {
+#navbar button:hover {
     color: cornflowerblue;
 
 }
 
 img#octocat {
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    user-select: none;
+    width: 260px;
+    height: 260px;
 }
-
-html {
-    zoom: 120%;
-}
-
