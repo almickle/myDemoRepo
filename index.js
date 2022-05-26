@@ -43,6 +43,7 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
         // universal content container //
 const contentContainer = document.getElementById("contentcontainer")
         contentContainer.style.display = "flex"
+        contentContainer.style.position = "relative"
 
          // temporary placeholder //
 const comingSoon = document.createElement("img")
@@ -277,21 +278,15 @@ function toggleMenu(elementID, appendLocation, appendage, leftMargin, menu, cont
 }
 
 
-function navbarpopup(appendLocation, appendage, leftMargin, menu, content) {
+function navbarpopup(appendLocation, appendage, menu, content) {
     appendLocation.append(appendage);
 
     appendage.style.backgroundColor = "aliceblue"
 
     appendage.style.width = "fit-content"
     appendage.style.height = "fit-content"
-
-    appendage.style.borderStyle = "solid"
-    appendage.style.borderWidth = "1px"
-    appendage.style.borderColor = "black"
-    appendage.style.borderRadius = "6px"
-
-    appendage.style.marginLeft = leftMargin
-    appendage.style.marginTop = "18px"
+ 
+    appendage.style.marginTop = "12px"
     appendage.style.textAlign = "left"
 
     populateDropDownMenu(appendage, menu, content)
@@ -299,6 +294,10 @@ function navbarpopup(appendLocation, appendage, leftMargin, menu, content) {
 
 function populateDropDownMenu(appendage, menu, content) {
     while(appendage.firstChild) {appendage.removeChild(appendage.firstChild)}
+
+    menu[0].style.borderTop = "solid"
+    menu[0].style.borderWidth = "2px"
+    menu[0].style.paddingTop = "13px"
 
     for (let i = 0; i < menu.length; i++) {
         appendage.append(menu[i])
@@ -380,9 +379,8 @@ function addDropDownClickListeners() {
                 console.log(`Open page: ${openPage}`)
 
                 contentContainer.style.flexDirection = "row"
-                contentContainer.style.marginTop = "30px"
-                contentContainer.style.marginLeft = "225px"
-                contentContainer.style.marginBottom = "100px"
+                contentContainer.style.margin = "auto"
+                contentContainer.style.right = "20px"
 
                 contentContainer.append(backArrow)
                    backArrow.style.marginTop = "130px"
@@ -668,7 +666,7 @@ forwardClickListener()
 backClickListener()
 
 for (n = 0; n < navbarIcon.length; n++) {
-    toggleMenu(navbarIcon[n], navbar, navbarMenu, menuTabLeft[n], menuTab[n], menuContentList[n])
+    toggleMenu(navbarIcon[n], navbarIcon[n], navbarMenu, menuTab[n], menuContentList[n])
 }
 
 clickOut()
