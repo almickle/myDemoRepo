@@ -490,7 +490,7 @@ function populateDropDownMenu(appendage, menu, content) {
         menu[i].style.fontFamily = "Trebuchet MS"
         menu[i].id = content[i]
         menu[i].style.position = "relative"
-        menu[i].style.zIndex = "0"
+        menu[i].style.zIndex = "1"
     }
 }
 
@@ -501,6 +501,7 @@ function addDropDownHoverListener () {
                 if (event.target.id === menuContentList[i][c]) {
                     console.log(`selected: ${menuContentList[i][c]}`)
                     menuTab[i][c].style.color = "cornflowerblue"
+                    menuTab[i][0].style.borderTopColor = "black"
                 } else {
                     menuTab[i][c].style.color = "black"
                 }
