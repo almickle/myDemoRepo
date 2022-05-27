@@ -54,7 +54,8 @@ body div#navbar {
     font-family: 'Trebuchet MS';
     font-size: larger;
 
-    cursor: default;
+    z-index: 1;
+    cursor: pointer;
 }
 
 #navbar button:hover {
