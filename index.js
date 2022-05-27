@@ -408,8 +408,13 @@ const forwardArrow = document.createElement("img")
 
 const buttonConstant =   1755904000 
 const buttonExp = 3
+const navbarConstant = 10126.09
+const navbarExp = 0.7
+
 let screenWidth
 let buttonMargin
+let navbarWidth
+
 let menuToggle = 0
 let currentMenu
 let currentSlideIndex
@@ -862,6 +867,8 @@ function forwardClickListener() {
 
 // -------------------------------------------------------------------------------------- //
 
+// styling functions //
+
 getScreenWidth()
 console.log(screenWidth)
 buttonMargin = ((Math.pow(screenWidth, buttonExp))/buttonConstant)
@@ -870,16 +877,21 @@ console.log(buttonMargin)
         navbarIcon[i].style.marginLeft = `${buttonMargin}%`
         navbarIcon[i].style.marginRight = `${buttonMargin}%`
     }
+    navbarWidth = navbarConstant/(Math.pow(screenWidth, navbarExp))
+    navbar.style.width = `${navbarWidth}%`
 
 window.addEventListener("resize", function (){
     getScreenWidth()
     console.log(screenWidth)
     buttonMargin = ((Math.pow(screenWidth, buttonExp))/buttonConstant)
-    console.log(buttonMargin)
+    console.log(`Button margin: ${buttonMargin}%`)
     for (let i = 0; i < navbarIcon.length; i++) {
         navbarIcon[i].style.marginLeft = `${buttonMargin}%`
         navbarIcon[i].style.marginRight = `${buttonMargin}%`
     }
+    navbarWidth = navbarConstant/(Math.pow(screenWidth, navbarExp))
+    navbar.style.width = `${navbarWidth}%`
+    console.log(`navbar width: ${navbarWidth}`)
     console.log("resized!")
 })
 
