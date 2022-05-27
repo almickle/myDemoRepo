@@ -44,7 +44,6 @@ const menuContentList = [homeMenuContent, portfolioMenuContent, projectsMenuCont
 const contentContainer = document.getElementById("contentcontainer")
         contentContainer.style.display = "flex"
         contentContainer.style.position = "relative"
-        contentContainer.style.zIndex = "-1"
 
          // temporary placeholder //
 const comingSoon = document.createElement("img")
