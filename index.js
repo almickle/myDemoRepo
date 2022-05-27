@@ -490,7 +490,7 @@ function populateDropDownMenu(appendage, menu, content) {
         menu[i].style.fontFamily = "Trebuchet MS"
         menu[i].id = content[i]
         menu[i].style.position = "relative"
-        menu[i].style.zIndex = "1"
+        menu[i].style.zIndex = "0"
     }
 }
 
